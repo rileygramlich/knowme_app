@@ -38,5 +38,8 @@ Trello:
 Google Doc:
 ![Google Doc](https://docs.google.com/document/d/1ZKIrL7_7BnaMPc0V7jeXQT0wU9mXj5T9_VeI5Gpg6_o/edit?usp=sharing)
 
+## Roles 
+
 ## Future Work  
 - **TBD**  
+

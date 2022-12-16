@@ -8,6 +8,4 @@ from django.db import models
 
 # Question Form Model
 
-#henry was herez
-# checking
-# test
+#Check on git hub

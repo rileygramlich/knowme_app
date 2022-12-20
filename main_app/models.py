@@ -39,6 +39,5 @@ class Question(models.Model):
 
 # Question Form Model
 
-#henry was herez
-# checking
-# test
+#Check on git hub
+#herny was here

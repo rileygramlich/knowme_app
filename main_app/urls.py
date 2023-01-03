@@ -2,7 +2,6 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('accounts/', include('django.contrib.auth.urls')),
     path('', views.home, name='home'),
     path('about', views.about, name='about'),
     #Quiz
@@ -17,5 +16,4 @@ urlpatterns = [
     path('questions/<int:pk>/update/', views.QuestionsUpdate.as_view(), name='questions_update'),
     path('questions/<int:pk>/delete/', views.QuestionsDelete.as_view(), name='questions_delete'),
     path('accounts/signup/', views.signup, name='signup'),
-
 ]

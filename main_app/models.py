@@ -14,7 +14,9 @@ QUESTIONS = (
 # Create your models here.
 class Quiz(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    name =models.CharField(max_length=100)
+
+    name = models.CharField(max_length=100)
+
 
     def __str__(self):
         return self.name
@@ -22,8 +24,8 @@ class Quiz(models.Model):
 
 class Question(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
-    question =models.CharField(
+    quiz = models.ForeignKey(Quiz, on_delete=models.PROTECT)
+    question = models.CharField(
         max_length=1,
         choices=QUESTIONS,
         default=QUESTIONS[0][0]

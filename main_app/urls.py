@@ -8,9 +8,8 @@ urlpatterns = [
     #App
     path('', views.home, name='home'),
     #Quiz
-    path('quiz', views.quiz_form_index, name='quiz_form_index'),
+    path('quizzes', views.quizzes_index, name='quizzes/index'),
     path('quizzes/<int:quiz_id>', views.quizzes_detail, name='detail'),
-    #Question
-    path('', views.home, name='home'),
 
+    #Question
 ]

@@ -55,8 +55,10 @@ def quizzes_detail(request):
 class QuizCreate(CreateView):
   model = Quiz
 
+
 class QuizUpdate(UpdateView):
   model = Quiz
+  fields = '__all__'
 
 class QuizDelete(DeleteView):
   model = Quiz

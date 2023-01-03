@@ -9,20 +9,23 @@ from .models import QUESTIONS,  Quiz, Question
 # AUTH PAGES 
 def signup(request):
   error_message = ''
-  if request.method == 'POST': # if the user submited a form 
-    form = UserCreationForm(request.POST) # Making a new instance of the class, request.POST is the body of the form
-    if form.is_valid(): # Validate it
-      user = form.save() # If valid, save
+  if request.method == 'POST':
+    # This is how to create a 'user' form object
+    # that includes the data from the browser
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+      # This will add the user to the database
+      user = form.save()
+      # This is how we log a user in via code
       login(request, user)
-      return redirect('index') # Redirect to indec
+      return redirect('index')
     else:
-      print(form.errors) #not valid
-      error_message = form.errors # error message
-  form = UserCreationForm() #empty form 
-  return render(request, 'registration/signup.html', {
-    'form': form,
-    'error_message': error_message
-  })
+      error_message = 'Invalid credentials - try again'
+  # A bad POST or a GET request, so render signup.html with an empty form
+  form = UserCreationForm()
+  context = {'form': form, 'error_message': error_message}
+  return render(request, 'registration/signup.html', context)
+  
   
  # GENERAL PATHS 
 def home(request):

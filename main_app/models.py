@@ -35,7 +35,8 @@ class Question(models.Model):
     def __str__(self):
         return self.id
 
-# User model here
+# USER MODEL 
+
 
 
 # QnAns Model

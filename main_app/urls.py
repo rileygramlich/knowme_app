@@ -11,6 +11,5 @@ urlpatterns = [
     path('quiz', views.quiz_form_index, name='quiz_form_index'),
     path('quizzes/<int:quiz_id>', views.quizzes_detail, name='detail'),
     #Question
-    path('', views.home, name='home'),
 
 ]

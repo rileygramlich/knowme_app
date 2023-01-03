@@ -2,9 +2,28 @@
     display: flex;
     color: blue;
     font-size: x-large;
-    justify-content: center;
+    justify-content: flex-end;
+    gap: 30px;
+    padding: 20px;
+    background-color: green;
+    border:  thick outset beige;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
-.textcolor{
+.navbar > a {
+    background-color: pink;
+    padding: 10px;
+    border-radius: 10px;
+    border-block: 5px solid rgb(74, 128, 215);
+    border-inline: 5px solid rgb(178, 26, 89);
+}
+
+.textcolor {
     color: brown;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
 }

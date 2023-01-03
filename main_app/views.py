@@ -4,14 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-# Create your views here.
-
-
-# GENERAL PATHS 
-def home(request):
-  return render(request, 'home.html')
-
-
+from .models import QUESTIONS,  Quiz, Question
 
 # AUTH PAGES 
 def signup(request):
@@ -30,4 +23,15 @@ def signup(request):
     'form': form,
     'error_message': error_message
   }) 
+  
+  
+ # GENERAL PATHS 
+def home(request):
+  return render(request, 'home.html')
 
+
+def test_form_index(request):
+    questions = QUESTIONS
+    return render(request, 'main_app/test_form_index.html', {
+        'questions': questions
+    })

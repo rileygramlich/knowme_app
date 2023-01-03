@@ -24,3 +24,5 @@ def signup(request):
     'error_message': error_message
   }) 
 
+def home(request):
+  return render(request, 'home.html')

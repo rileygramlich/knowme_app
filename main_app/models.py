@@ -13,25 +13,25 @@ QUESTIONS = (
 
 # Create your models here.
 class Quiz(models.Model):
-    user: models.ForeignKey(User, on_delete=models.CASCADE)
-    name: models.CharField(max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name =models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
 
 
 class Question(models.Model):
-    user: models.ForeignKey(User, on_delete=models.CASCADE)
-    quiz: models.ForeignKey(Quiz, on_delete=models.SET_NULL)
-    question: models.CharField(
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    question =models.CharField(
         max_length=1,
         choices=QUESTIONS,
         default=QUESTIONS[0][0]
     )
-    true_answer: models.CharField(max_length=250)
-    false_answer1: models.CharField(max_length=250)
-    false_answer2: models.CharField(max_length=250)
-    false_answer3: models.CharField(max_length=250)
+    true_answer = models.CharField(max_length=250)
+    false_answer1 = models.CharField(max_length=250)
+    false_answer2 = models.CharField(max_length=250)
+    false_answer3 = models.CharField(max_length=250)
 
     def __str__(self):
         return self.id

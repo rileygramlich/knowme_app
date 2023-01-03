@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,23 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Know Me</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="{% url '' %}">Take a Test</a></li>
-            {% if user.is_authenticated %}
-                <li><a href="{% url 'toys_create' %}">Add a Toy</a></li>
-                <li><a href="{% url 'toys_index' %}">View All Toys</a></li>
-                <li><a href="{% url 'cats_create' %}">Add a Cat</a></li>
-                <li><a href="{% url 'index' %}">View All My Cats</a></li>
-                <li><a href="{% url 'logout' %}">Log Out</a></li>
-            {% else %}
-                <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                <li><a href="{% url 'login' %}">Log In</a></li>
-            {% endif %}
-        </ul>
-    </nav>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
 </body>
 </html>

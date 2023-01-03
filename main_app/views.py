@@ -7,7 +7,7 @@ from django.views.generic import ListView, DetailView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from .models import QUESTIONS,  Quiz, Question
+from .models import QUESTIONS, Quiz, Question
 
 # AUTH PAGES 
 def signup(request):
@@ -37,6 +37,7 @@ def about(request):
 # QUIZ PATHS
 def quizzes_index(request):
     return render(request, 'quizzes/index.html', {
+    'quizzes': Quiz.objects.all()
     })
 
 def quizzes_detail(request):
@@ -48,13 +49,15 @@ def quizzes_detail(request):
     
 class QuizCreate(CreateView):
   model = Quiz
+  fields = '__all__'
+  success_url = '/quizzes/'
 
 class QuizUpdate(UpdateView):
   model = Quiz
 
 class QuizDelete(DeleteView):
   model = Quiz
-  success_url = '/quizzes/index'
+  success_url = '/quizzes/'
 
 def quiz_take_quiz(request):
   return render(request, 'main_app/quiz_take_quiz.html', {
@@ -70,6 +73,7 @@ def quiz_take_quiz(request):
 class QuestionCreate(LoginRequiredMixin, CreateView):
   model = Question
   fields = '__all__'
+  success_url = '/quizzes/'
 
 class QuestionUpdate(LoginRequiredMixin, UpdateView):
   model = Question

@@ -34,6 +34,8 @@ def quiz_form_index(request):
 
 def quizzes_detail(request):
     return render(request, 'quizzes/detail.html', {
-    'questions': QUESTIONS
+    'questions': QUESTIONS,
+    'question': Question,
+    'quiz': Quiz
     })
     

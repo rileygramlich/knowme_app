@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -24,7 +25,7 @@ def signup(request):
     'error_message': error_message
   })
   
- # GENERAL PATHS 
+# GENERAL PATHS 
 def home(request):
   return render(request, 'home.html')
 
@@ -38,4 +39,12 @@ def quizzes_detail(request):
     'question': Question,
     'quiz': Quiz
     })
-    
+
+
+# QUESTION PATHS
+class QuestionCreate(LoginRequiredMixin, CreateView):
+  model = Question
+  fields = '__all__'
+
+class QuestionUpdate(LoginRequiredMixin, UpdateView):
+  model = Question

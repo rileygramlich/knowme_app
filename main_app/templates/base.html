@@ -14,7 +14,7 @@
         <nav>
             <ul>
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'quiz_form_index' %}">All Quizzes</a></li>
+                    <li><a href="{% url 'index' %}">All Quizzes</a></li>
                     <li><a href="{% url 'quiz_create' %}">Make a Quiz</a></li>
                     <li><a href="{% url 'question_create' %}">Make a Question</a></li>
                     <li><a href="{% url 'logout' %}">Log Out</a></li> 

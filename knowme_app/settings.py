@@ -83,8 +83,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'knowme_app',
-        'USER': 'postgres',
-        'PASSWORD': env('PSQL_PASSWORD')
+        # 'USER': 'postgres',
+        # 'PASSWORD': env('PSQL_PASSWORD')
     }
 }
 

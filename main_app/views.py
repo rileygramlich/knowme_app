@@ -51,12 +51,12 @@ def quizzes_detail(request):
 class QuizCreate(CreateView):
   model = Quiz
 
+class QuizUpdate(UpdateView):
+  model = Quiz
+
 class QuizDelete(DeleteView):
   model = Quiz
   success_url = '/quizzes/index'
-
-class QuizUpdate(UpdateView):
-  model = Quiz
 
 def quiz_take_quiz(request):
   return render(request, 'main_app/quiz_take_quiz.html', {

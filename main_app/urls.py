@@ -7,9 +7,13 @@ urlpatterns = [
     path('accounts/signup/', views.signup, name='signup'),
     #App
     path('', views.home, name='home'),
+    path('about', views.about, name='about'),
     #Quiz
     path('quizzes', views.quizzes_index, name='quizzes/index'),
     path('quizzes/<int:quiz_id>', views.quizzes_detail, name='detail'),
-
+    path('quizzes/create', views.QuizCreate.as_view(), name='quiz_create'),
+    path('quizzes/<int:pk>/update', views.QuizUpdate.as_view(), name='quiz_update'),
+    path('quizzes/<int:pk>/delete/', views.QuizDelete.as_view(), name='quiz_delete'),
+    path('quizzes/<int:quiz_id>/take', views.quiz_take_quiz, name='quiz_take_quiz')
     #Question
 ]

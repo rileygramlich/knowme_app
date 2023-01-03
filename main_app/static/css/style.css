@@ -1,22 +1,26 @@
 .navbar {
     display: flex;
     color: blue;
-    font-size: x-large;
+    font-size: 25px;
     justify-content: flex-end;
     gap: 30px;
     padding: 20px;
-    background-color: green;
-    border:  thick outset beige;
+    background-color: rgb(146, 211, 233);
+    border-radius: 20px;
+    border:  thick dotted rgb(163, 234, 209);
     margin-left: 10%;
     margin-right: 10%;
+    font-family: fantasy;
 }
 
 .navbar > a {
-    background-color: pink;
+    background-color: rgb(243, 174, 215);
     padding: 10px;
     border-radius: 10px;
-    border-block: 5px solid rgb(74, 128, 215);
-    border-inline: 5px solid rgb(178, 26, 89);
+    border-block: thick dashed rgb(217, 137, 231);
+    border-inline: thick dashed rgb(208, 117, 218);
+    text-decoration: none;
+    text-shadow: 5px 5px 10px rgb(246, 192, 201);
 }
 
 .textcolor {

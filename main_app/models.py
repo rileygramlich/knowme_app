@@ -35,12 +35,7 @@ class Question(models.Model):
     def __str__(self):
         return self.id
 
-# User model here
-
 
 # QnAns Model
 
 # Question Form Model
-
-#Check on git hub
-#herny was here

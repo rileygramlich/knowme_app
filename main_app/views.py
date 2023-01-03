@@ -4,6 +4,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+from .models import QUESTIONS,  Quiz, Question
+
 
 # Create your views here.
 
@@ -24,3 +26,9 @@ def signup(request):
     'error_message': error_message
   }) 
 
+
+def test_form_index(request):
+    questions = QUESTIONS
+    return render(request, 'main_app/test_form_index.html', {
+        'questions': questions
+    })

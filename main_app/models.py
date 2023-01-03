@@ -8,6 +8,8 @@ QUESTIONS = (
     ('4', 'What is my favourite movie?'), 
     ('5', 'Who is my favourite music artist?'), 
 )
+
+
 # Create your models here.
 class Quiz(models.Model):
     user: models.ForeignKey(User, on_delete=models.CASCADE)
@@ -34,6 +36,7 @@ class Question(models.Model):
         return self.id
 
 # User model here
+
 
 # QnAns Model
 

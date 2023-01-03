@@ -35,7 +35,8 @@ class Question(models.Model):
     false_answer3 = models.CharField(max_length=250)
 
     def __str__(self):
-        return self.id
+        # Nice method for obtaining the friendly value of a Field.choice
+        return f"{self.get_meal_display()} on {self.date}"
         
 # QnAns Model
 

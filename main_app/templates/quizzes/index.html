@@ -7,7 +7,7 @@
   <a href="{% url 'detail' quiz.id %}">
     <div>{{ quiz.name }}</div>
         {% for questions in quiz.question_set.all %} 
-        <p>Number of Questions: {% questions.length %}</p>
+        <!-- <p>Number of Questions: {% questions.length %}</p> -->
         {% endfor %}
     </div>
   </a>

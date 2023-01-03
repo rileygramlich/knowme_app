@@ -22,5 +22,8 @@ def signup(request):
   return render(request, 'registration/signup.html', {
     'form': form,
     'error_message': error_message
-  }) 
+  })
+
+def home(request):
+  return render(request, 'home.html')
 

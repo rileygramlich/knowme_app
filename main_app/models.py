@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 QUESTIONS = (
     ('1', 'What is my favorite color?'), 
     ('2', 'What is my favourite food?'),
@@ -35,13 +36,6 @@ class Question(models.Model):
     def __str__(self):
         return self.id
 
-# USER MODEL 
-
-
-
 # QnAns Model
 
 # Question Form Model
-
-#Check on git hub
-#herny was here

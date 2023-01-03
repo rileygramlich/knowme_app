@@ -4,9 +4,16 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-
 # Create your views here.
 
+
+# GENERAL PATHS 
+def home(request):
+  return render(request, 'home.html')
+
+
+
+# AUTH PAGES 
 def signup(request):
   error_message = ''
   if request.method == 'POST': # if the user submited a form 

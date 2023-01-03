@@ -22,13 +22,10 @@ def signup(request):
   return render(request, 'registration/signup.html', {
     'form': form,
     'error_message': error_message
-  }) 
-  
   
  # GENERAL PATHS 
 def home(request):
   return render(request, 'home.html')
-
 
 def test_form_index(request):
     questions = QUESTIONS

@@ -13,6 +13,7 @@
           {% endfor %}
         <a class="button"href="{% url 'quiz_update' quiz.id %}">Edit</a>
         <a class="button"href="{% url 'quiz_delete' quiz.id %}">Delete</a>
+        <a class="button"href="{% url 'quiz_take_quiz' quiz.id %}">Take this Quiz!</a>
       </div>
     {% endfor %}
   </div>

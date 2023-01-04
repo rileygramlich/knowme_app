@@ -8,7 +8,6 @@
     <ol>
         <li>{{ question.get_question_display }}</li>
         <a href="{% url 'question_update' question.id %}">Edit</a>
-        <a href="{% url 'question_delete' question.id %}">Delete</a>
     </ol>
   {% endfor %}
 </div>

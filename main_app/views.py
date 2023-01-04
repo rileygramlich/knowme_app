@@ -29,7 +29,6 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
   
-  
 # GENERAL PATHS 
 def home(request):
   return render(request, 'home.html')
@@ -68,6 +67,9 @@ def quiz_take_quiz(request):
     'question': Question,
     'quiz': Quiz
     })
+
+# QUESTION PATHS
+
 
 # QUESTION PATHS
 class QuestionCreate(LoginRequiredMixin, CreateView):

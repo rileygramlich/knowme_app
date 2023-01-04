@@ -43,8 +43,10 @@ def quizzes_index(request):
 
 def quizzes_detail(request, quiz_id):
   quiz = Quiz.objects.get(id=quiz_id)
+  questions = Question.objects.all()
   return render(request, 'quizzes/detail.html', {
-  'quiz': quiz
+  'quiz': quiz,
+  'questions': questions
   })
     
 class QuizCreate(CreateView):
@@ -58,6 +60,7 @@ class QuizCreate(CreateView):
 
 class QuizUpdate(UpdateView):
   model = Quiz
+  fields = '__all__'
 
 class QuizDelete(DeleteView):
   model = Quiz
@@ -81,3 +84,7 @@ class QuestionCreate(LoginRequiredMixin, CreateView):
 
 class QuestionUpdate(LoginRequiredMixin, UpdateView):
   model = Question
+
+class QuestionDelete(DeleteView):
+  model = Question
+  success_url = '/quizzes/'

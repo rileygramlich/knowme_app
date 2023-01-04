@@ -9,7 +9,7 @@
 
 <div>
   <ol>
-      {% for question in quiz.question_set.all %}
+      {% for question in questions %}
         <li>{{ question.get_question_display }}</li>
         <ul>
           <li>{{ question.true_answer }}</li>
@@ -20,7 +20,6 @@
         <a href="{% url 'question_update' question.id %}">Edit</a>
       {% endfor %}
   </ol>
-=======
   <div class="form">
     {% for question in quiz.question_set.all %}
       <ol>
@@ -31,22 +30,5 @@
   </div>
 </div>
 
-<div>
-  <div class="about">
-    {% if object %}
-    <h1>Edit {{question.name}}</h1>
-    {% else %}
-    <h1>Create Question</h1>
-    {% endif %}
-  </div>
-
-  <form action="" method="post" class="form">
-    {% csrf_token %}
-    <table>
-      {{ form.as_table }}
-    </table>
-    <input type="submit" value="Submit!" class="button">
-  </form>
-</div>
 
 {% endblock %} 

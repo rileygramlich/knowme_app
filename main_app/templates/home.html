@@ -1,10 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div class="about">
+    <div class="about-title">
+        <h1>Home</h1>
+    </div>
+    <div>
+        <div class="about-content">
+            <p>Content</p>
+        </div>
+    </div>
+</div>
 
 <h1>Know Me</h1>
 
 <a href="{% url 'quiz_take_quiz' 1 %}">Take a Quiz</a>
+=======
+<!-- <a href="">Take a Quiz</a> -->
 {% if user.is_authenticated %}
     <a href="{% url 'index' %}">See All My Quizzes</a>
 {% endif %}

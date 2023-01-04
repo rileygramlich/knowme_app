@@ -1,14 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>All Quizzes</h1>
-
-{% for quiz in quizzes %}
-  <div class="card"><a href="{% url 'detail' quiz.id %}">{{ quiz.name }}</a>
-      <p>Number of Questions: {{ quiz.question_set.all|length }}</p>
-    <a href="{% url 'quiz_update' quiz.id %}">Edit</a>
-    <a href="{% url 'quiz_delete' quiz.id %}">Delete</a>
+  <div>
+    <h1>All Quizzes</h1>
   </div>
-{% endfor %}
+  <div>
+    {% for quiz in quizzes %}
+      <div class="about-content"><a href="{% url 'detail' quiz.id %}">{{ quiz.name }}</a>
+          {% for question in quiz.question_set.all %} 
+            <p>Number of Questions: {{ quiz.question_set.all|length }}</p>
+          {% endfor %}
+        <a class="button"href="{% url 'quiz_update' quiz.id %}">Edit</a>
+        <a class="button"href="{% url 'quiz_delete' quiz.id %}">Delete</a>
+        <a class="button"href="{% url 'quiz_take_quiz' quiz.id %}">Take this Quiz!</a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
 
 {% endblock %}

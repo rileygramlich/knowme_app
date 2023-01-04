@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>{{ quiz.name }}</h1>
+<div class="about">
+  <div>
+    <h1>{{ quiz.name }}</h1>
+  </div>
+
 
 <div>
   <ol>
@@ -16,7 +20,33 @@
         <a href="{% url 'question_update' question.id %}">Edit</a>
       {% endfor %}
   </ol>
+=======
+  <div class="form">
+    {% for question in quiz.question_set.all %}
+      <ol>
+          <li>{{ question.get_question_display }}</li>
+          <a class="button"href="{% url 'question_update' question.id %}">Edit</a>
+      </ol>
+    {% endfor %}
+  </div>
 </div>
 
+<div>
+  <div class="about">
+    {% if object %}
+    <h1>Edit {{question.name}}</h1>
+    {% else %}
+    <h1>Create Question</h1>
+    {% endif %}
+  </div>
+
+  <form action="" method="post" class="form">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit!" class="button">
+  </form>
+</div>
 
 {% endblock %} 

@@ -16,7 +16,15 @@ urlpatterns = [
     path('quizzes/<int:pk>/delete/', views.QuizDelete.as_view(), name='quiz_delete'),
     path('quizzes/<int:quiz_id>/take', views.quiz_take_quiz, name='quiz_take_quiz'),
     #Question
+<<<<<<< HEAD
     path('questions/create/', views.QuestionCreate.as_view(), name='question_create'),
     path('questions/<int:pk>/update/', views.QuestionUpdate.as_view(), name='question_update'),
     # path('questions/<int:pk>/delete/', views.QuestionDelete.as_view(), name='question_delete'),
+=======
+    path('questions/create/', views.QuestionCreate.as_view(), name='questions_create'),
+    path('questions/<int:pk>/update/', views.QuestionUpdate.as_view(), name='questions_update'),
+    # path('questions/<int:pk>/delete/', views.QuestionDelete.as_view(), name='questions_delete'),
+    path('accounts/signup/', views.signup, name='signup'),
+    path('', views.home, name='home'),
+>>>>>>> ea6ded1f1e729e9c04f734490cbb09d64a8fe7df
 ]

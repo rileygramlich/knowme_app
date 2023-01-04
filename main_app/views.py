@@ -82,3 +82,7 @@ class QuestionCreate(LoginRequiredMixin, CreateView):
 
 class QuestionUpdate(LoginRequiredMixin, UpdateView):
   model = Question
+
+class QuestionDelete(DeleteView):
+  model = Question
+  success_url = '/quizzes/'

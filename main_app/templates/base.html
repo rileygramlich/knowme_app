@@ -10,7 +10,6 @@
     <title>Know Me</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
-<<<<<<< HEAD
 <body class="background-color">
     <div>
         <div class="hover-nav">
@@ -35,27 +34,5 @@
     </div>
     <div class="background-color1"></div>
     <div class="background-color2"></div>
-=======
-<body>
-    <header>
-        <nav>
-            <ul>
-                <!-- {% if user.is_authenticated %} -->
-                    <li><a href="{% url 'quiz_form_index' %}">All Quizzes</a></li>
-                    <li><a href="{% url 'quiz_create' %}">Make a Quiz</a></li>
-                    <li><a href="{% url 'question_create' %}">Make a Question</a></li>
-                    <li><a href="{% url 'logout' %}">Log Out</a></li> 
-                <!-- {% else %} -->
-                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                    <li><a href="{% url 'login' %}">Log In</a></li>
-                <!-- {% endif %} -->
-            </ul>
-        </nav>
-    </header>
-    <main class="container">
-        {% block content %}
-        {% endblock %}
-    </main>
->>>>>>> ea6ded1f1e729e9c04f734490cbb09d64a8fe7df
 </body>
 </html>

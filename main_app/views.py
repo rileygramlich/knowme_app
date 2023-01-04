@@ -49,8 +49,12 @@ def quizzes_detail(request, quiz_id):
     
 class QuizCreate(CreateView):
   model = Quiz
-  fields = '__all__'
+  fields = ['name']
   success_url = '/quizzes/'
+
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 class QuizUpdate(UpdateView):
   model = Quiz
@@ -70,6 +74,10 @@ class QuestionCreate(LoginRequiredMixin, CreateView):
   model = Question
   fields = ['quiz','question', 'true_answer', 'false_answer1', 'false_answer2', 'false_answer3']
   success_url = '/quizzes/'
+
+  def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 class QuestionUpdate(LoginRequiredMixin, UpdateView):
   model = Question

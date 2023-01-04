@@ -43,8 +43,11 @@ def quizzes_index(request):
 
 def quizzes_detail(request, quiz_id):
   quiz = Quiz.objects.get(id=quiz_id)
+  questions = Question.objects.all()
+  print(questions)
   return render(request, 'quizzes/detail.html', {
-  'quiz': quiz
+  'quiz': quiz,
+  'questions': questions
   })
     
 class QuizCreate(CreateView):
@@ -73,7 +76,7 @@ def quiz_take_quiz(request, quiz_id):
 # QUESTION PATHS
 class QuestionCreate(LoginRequiredMixin, CreateView):
   model = Question
-  fields = ['quiz','question', 'true_answer', 'false_answer1', 'false_answer2', 'false_answer3']
+  fields = ['question', 'true_answer', 'false_answer1', 'false_answer2', 'false_answer3']
   success_url = '/quizzes/'
 
   def form_valid(self, form):

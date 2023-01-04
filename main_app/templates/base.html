@@ -9,17 +9,24 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <title>Know Me</title>
 </head>
-<body>
+<body class="background-color">
     <div>
-        <nav class="navbar">
-            <a href="">Test Form Index</a>
-            <a href="">Sign Up</a>
-            <a href="">Login</a>
-        </nav>
+        <div class="hover-nav">
+            <nav class="navbar">
+                <a href="">Test Button</a>
+                <a href="">Test Button</a>
+                <a href="">Test Button</a>
+                <a href="">Test Form Index</a>
+                <a href="">Sign Up</a>
+                <a href="">Login</a>
+            </nav>
+        </div>
+        <main class="container">
+            {% block content %}
+            {% endblock %}
+        </main>
     </div>
-    <main class="container">
-        {% block content %}
-        {% endblock %}
-    </main>
+    <div class="background-color1"></div>
+    <div class="background-color2"></div>
 </body>
 </html>

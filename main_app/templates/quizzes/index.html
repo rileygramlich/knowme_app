@@ -4,8 +4,7 @@
 <h1>All Quizzes</h1>
 
 {% for quiz in quizzes %}
-  <div>{{ quiz.name }}</div>
-    <a href="{% url 'detail' quiz.id %}"></a>
+  <div><a href="{% url 'detail' quiz.id %}">{{ quiz.name }}</a>
       {% for question in quiz.question_set.all %} 
         <p>Number of Questions: {{ quiz.question_set.all|length }}</p>
       {% endfor %}

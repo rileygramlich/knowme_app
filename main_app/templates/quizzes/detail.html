@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>{{ quiz.name }}</h1>
+<div class="about">
+  <div>
+    <h1>{{ quiz.name }}</h1>
+  </div>
 
-<div>
-  {% for question in quiz.question_set.all %}
-    <ol>
-        <li>{{ question.get_question_display }}</li>
-        <a href="{% url 'question_update' question.id %}">Edit</a>
-    </ol>
-  {% endfor %}
+  <div class="form">
+    {% for question in quiz.question_set.all %}
+      <ol>
+          <li>{{ question.get_question_display }}</li>
+          <a class="button"href="{% url 'question_update' question.id %}">Edit</a>
+      </ol>
+    {% endfor %}
+  </div>
 </div>
 
 

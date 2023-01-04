@@ -1,0 +1,60 @@
+
+.navbar {
+    display: flex;
+    font-size: 25px;
+    justify-content: flex-end;
+    gap: 30px;
+    padding: 20px;
+    /*background-color:hsla(181, 100%, 81%, 0.971);*/
+    background-image: linear-gradient(to right, hsla(181, 100%, 50%, 0.827), hsla(181, 100%, 74%, 0.982),hsla(181, 100%, 86%, 0.971));
+    border-radius: 20px;
+    border:  thick dotted rgb(36, 189, 181);
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family: fantasy;
+    box-shadow: 0 25px 50px -12px rgb(138, 237, 255);
+}
+
+.navbar > a {
+    background-color: hsl(301, 100%, 91%);
+    padding: 10px;
+    border-radius: 10px;
+    border-block: thick dashed rgb(217, 137, 231);
+    border-inline: thick dashed rgb(208, 117, 218);
+    box-shadow: 0 25px 50px -12px rgb(249, 200, 253);
+    text-decoration: none;
+    text-shadow: 5px 5px 10px rgb(246, 192, 201);
+}
+
+.navbar > a:hover {
+    border-block: thick solid rgb(223, 91, 246);
+    border-inline: thick solid rgb(240, 103, 255);
+    background-color: hsl(300, 39%, 93%);
+    box-shadow: 0 25px 50px -12px rgb(244, 126, 255);
+    transition: all 750ms ease-in-out;
+    font-style: bold;
+}
+
+.navbar:hover {
+    border: solid 5px;
+    transition: all 1s ease-in-out;
+    border-block: thick solid rgb(33, 237, 252);
+    border-inline: thick solid rgb(209, 248, 255);
+    background-image: linear-gradient(to right, hsla(181, 100%, 87%, 0.827), hsla(181, 100%, 74%, 0.982),hsla(181, 100%, 50%, 0.885));
+}
+
+.background-color {
+    background-color: antiquewhite;
+    background-image: linear-gradient(90deg, hsl(300, 60%, 96%),hsl(283, 89%, 93%), hsla(186, 89%, 86%, 0.982),hsl(300, 100%, 92%),hsl(300, 70%, 95%));
+    background-size: round;
+
+}
+
+.textcolor {
+    color: brown;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}

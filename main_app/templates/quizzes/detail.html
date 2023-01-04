@@ -18,5 +18,22 @@
   </div>
 </div>
 
+<div>
+  <div class="about">
+    {% if object %}
+    <h1>Edit {{question.name}}</h1>
+    {% else %}
+    <h1>Create Question</h1>
+    {% endif %}
+  </div>
+
+  <form action="" method="post" class="form">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit!" class="button">
+  </form>
+</div>
 
 {% endblock %} 

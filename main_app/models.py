@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
 
 
@@ -10,19 +11,9 @@ QUESTIONS = (
     ('5', 'Who is my favourite music artist?'), 
 )
 
-
 # Create your models here.
-class Quiz(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name
-
-
 class Question(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    quiz = models.ForeignKey(Quiz, on_delete=models.PROTECT)
     question = models.CharField(
         max_length=1,
         choices=QUESTIONS,
@@ -34,7 +25,21 @@ class Question(models.Model):
     false_answer3 = models.CharField(max_length=250)
 
     def __str__(self):
-        # print(self.request.user)
         return f"{self.question}"
+
+class Quiz(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    questions = models.ManyToManyField(Question)
+
+    def __str__(self):
+        return self.name
     
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'pk': self.id})
+    
+
+
+
+
     

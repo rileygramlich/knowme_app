@@ -44,7 +44,6 @@ def quizzes_index(request):
 def quizzes_detail(request, quiz_id):
   quiz = Quiz.objects.get(id=quiz_id)
   questions = Question.objects.all()
-  print(questions)
   return render(request, 'quizzes/detail.html', {
   'quiz': quiz,
   'questions': questions

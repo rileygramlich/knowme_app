@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <title>Know Me</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body class="background-color">
     <div>
@@ -19,6 +20,17 @@
                 <a href="">Test Form Index</a>
                 <a href="">Sign Up</a>
                 <a href="">Login</a>
+                <ul>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'index' %}">All Quizzes</a></li>
+                    <li><a href="{% url 'quiz_create' %}">Make a Quiz</a></li>
+                    <li><a href="{% url 'question_create' %}">Make a Question</a></li>
+                    <li><a href="{% url 'logout' %}">Log Out</a></li> 
+                {% else %}
+                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                    <li><a href="{% url 'login' %}">Log In</a></li>
+                {% endif %}
+            </ul>
             </nav>
         </div>
         <main class="container">

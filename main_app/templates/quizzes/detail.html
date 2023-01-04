@@ -7,20 +7,25 @@
   </div>
 
 
-
-  <div class="quiz">
-    {% for question in questions %}
-    <ol>
-      <li>{{ question.get_question_display }}</li>
-      <ul>
-        <li>True Answer: {{ question.true_answer }}</li>
-        <li>False Answer 1: {{ question.false_answer1 }}</li>
-        <li>False Answer 2: {{ question.false_answer2 }}</li>
-        <li>False Answer 3: {{ question.false_answer3 }}</li>
-          </ul>
+<div>
+  <ol>
+      {% for question in questions %}
+        <li>{{ question.get_question_display }}</li>
+        <ul>
+          <li>{{ question.true_answer }}</li>
+          <li>{{ question.false_answer1 }}</li>
+          <li>{{ question.false_answer2 }}</li>
+          <li>{{ question.false_answer3 }}</li>
+        </ul>
+        <a href="{% url 'question_update' question.id %}">Edit</a>
+      {% endfor %}
+  </ol>
+  <div class="form">
+    {% for question in quiz.question_set.all %}
+      <ol>
+          <li>{{ question.get_question_display }}</li>
           <a class="button"href="{% url 'question_update' question.id %}">Edit</a>
       </ol>
-      
     {% endfor %}
   </div>
 </div>

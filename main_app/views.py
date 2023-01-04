@@ -34,7 +34,7 @@ def about(request):
 # QUIZ PATHS
 def quizzes_index(request):
     return render(request, 'quizzes/index.html', {
-    #'quizzes': Quiz.objects.all(),
+      'quizzes': Quiz.objects.all(),
       'questions': QUESTIONS,
       'question': Question,
       'quiz': Quiz

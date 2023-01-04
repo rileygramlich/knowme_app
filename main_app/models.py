@@ -34,4 +34,7 @@ class Question(models.Model):
     false_answer3 = models.CharField(max_length=250)
 
     def __str__(self):
+        # print(self.request.user)
         return f"{self.question}"
+    
+    

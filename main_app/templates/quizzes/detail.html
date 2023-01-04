@@ -4,12 +4,18 @@
 <h1>{{ quiz.name }}</h1>
 
 <div>
-  {% for question in quiz.question_set.all %}
-    <ol>
+  <ol>
+      {% for question in quiz.question_set.all %}
         <li>{{ question.get_question_display }}</li>
+        <ul>
+          <li>{{ question.true_answer }}</li>
+          <li>{{ question.false_answer1 }}</li>
+          <li>{{ question.false_answer2 }}</li>
+          <li>{{ question.false_answer3 }}</li>
+        </ul>
         <a href="{% url 'question_update' question.id %}">Edit</a>
-    </ol>
-  {% endfor %}
+      {% endfor %}
+  </ol>
 </div>
 
 

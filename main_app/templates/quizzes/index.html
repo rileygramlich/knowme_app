@@ -4,10 +4,8 @@
 <h1>All Quizzes</h1>
 
 {% for quiz in quizzes %}
-  <div><a href="{% url 'detail' quiz.id %}">{{ quiz.name }}</a>
-      {% for question in quiz.question_set.all %} 
-        <p>Number of Questions: {{ quiz.question_set.all|length }}</p>
-      {% endfor %}
+  <div class="card"><a href="{% url 'detail' quiz.id %}">{{ quiz.name }}</a>
+      <p>Number of Questions: {{ quiz.question_set.all|length }}</p>
     <a href="{% url 'quiz_update' quiz.id %}">Edit</a>
     <a href="{% url 'quiz_delete' quiz.id %}">Delete</a>
   </div>

@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body class="background-color">
-    <div>
-        <div class="hover-nav">
+    <div class="">
+        <div class="navbar-anim">
             <nav class="navbar">
                 <a href="{% url 'home' %}">Home</a>
                 <a href="{% url 'about' %}">About</a>
@@ -31,6 +31,9 @@
             {% block content %}
             {% endblock %}
         </main>
+        <div class="footer">
+            <p>2023 Heneharianne CAD, Inc. All rights reserved</p>
+        </div>
     </div>
 </body>
 </html>

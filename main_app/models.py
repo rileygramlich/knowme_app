@@ -16,7 +16,6 @@ class Quiz(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
 
-
     def __str__(self):
         return self.name
 
@@ -35,8 +34,4 @@ class Question(models.Model):
     false_answer3 = models.CharField(max_length=250)
 
     def __str__(self):
-        return self.id
-        
-# QnAns Model
-
-# Question Form Model
+        return f"{self.question}"

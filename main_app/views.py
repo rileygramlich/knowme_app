@@ -9,6 +9,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import QUESTIONS, Quiz, Question
 
+questions = Question.objects.all()
+
 # AUTH PAGES 
 def signup(request):
   error_message = ''
@@ -33,19 +35,17 @@ def about(request):
 
 # QUIZ PATHS
 def quizzes_index(request):
-    return render(request, 'quizzes/index.html', {
-      'quizzes': Quiz.objects.all(),
-      'questions': QUESTIONS,
-      'question': Question,
-      'quiz': Quiz
-    })
-
-def quizzes_detail(request):
-    return render(request, 'quizzes/detail.html', {
-    'questions': QUESTIONS,
-    'question': Question,
+  return render(request, 'quizzes/index.html', {
+    'quizzes': Quiz.objects.all(),
+    'questions': questions,
     'quiz': Quiz
-    })
+  })
+
+def quizzes_detail(request, quiz_id):
+  quiz = Quiz.objects.get(id=quiz_id)
+  return render(request, 'quizzes/detail.html', {
+  'quiz': quiz
+  })
     
 class QuizCreate(CreateView):
   model = Quiz
@@ -59,11 +59,10 @@ class QuizDelete(DeleteView):
   model = Quiz
   success_url = '/quizzes/'
 
-def quiz_take_quiz(request):
+def quiz_take_quiz(request, quiz_id):
+  quiz = Quiz.objects.get(id=quiz_id)
   return render(request, 'main_app/quiz_take_quiz.html', {
-    'questions': QUESTIONS,
-    'question': Question,
-    'quiz': Quiz
+    'quiz': quiz
     })
 
 # QUESTION PATHS

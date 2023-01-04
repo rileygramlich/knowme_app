@@ -21,7 +21,7 @@ def signup(request):
       user = form.save()
       # This is how we log a user in via code
       login(request, user)
-      return redirect('index')
+      return redirect('quizzes/index')
     else:
       error_message = 'Invalid credentials - try again'
   # A bad POST or a GET request, so render signup.html with an empty form
@@ -39,7 +39,10 @@ def about(request):
 # QUIZ PATHS
 def quizzes_index(request):
     return render(request, 'quizzes/index.html', {
-    'quizzes': Quiz.objects.all()
+    #'quizzes': Quiz.objects.all(),
+      'questions': QUESTIONS,
+      'question': Question,
+      'quiz': Quiz
     })
 
 def quizzes_detail(request):
@@ -53,6 +56,7 @@ class QuizCreate(CreateView):
   model = Quiz
   fields = '__all__'
   success_url = '/quizzes/'
+
 
 class QuizUpdate(UpdateView):
   model = Quiz

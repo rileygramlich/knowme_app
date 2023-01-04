@@ -19,7 +19,7 @@
                 {% if user.is_authenticated %}
                     <a href="{% url 'index' %}">All Quizzes</a>
                     <a href="{% url 'quiz_create' %}">Make a Quiz</a>
-                    <a href="{% url 'question_create' %}">Make a Question</a>
+                    <!-- <a href="{% url 'question_create' %}">Make a Question</a> -->
                     <a href="{% url 'logout' %}">Log Out</a></li> 
                 {% else %}
                     <a href="{% url 'signup' %}">Sign Up</a>

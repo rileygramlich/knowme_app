@@ -72,7 +72,7 @@ def quiz_take_quiz(request, quiz_id):
 # QUESTION PATHS
 class QuestionCreate(LoginRequiredMixin, CreateView):
   model = Question
-  fields = ['quiz','question', 'true_answer', 'false_answer1', 'false_answer2', 'false_answer3']
+  fields = ['question', 'true_answer', 'false_answer1', 'false_answer2', 'false_answer3']
   success_url = '/quizzes/'
 
   def form_valid(self, form):

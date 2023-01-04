@@ -6,13 +6,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <title>Know Me</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
+<body class="background-color">
+    <div>
+        <div class="hover-nav">
+            <nav class="navbar">
+                <a href="">Test Button</a>
+                <a href="">Test Button</a>
+                <a href="">Test Button</a>
+                <a href="">Test Form Index</a>
+                <a href="">Sign Up</a>
+                <a href="">Login</a>
+                <ul>
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'index' %}">All Quizzes</a></li>
                     <li><a href="{% url 'quiz_create' %}">Make a Quiz</a></li>
@@ -23,9 +31,14 @@
                     <li><a href="{% url 'login' %}">Log In</a></li>
                 {% endif %}
             </ul>
-        </nav>
-    </header>
-    {% block content %}
-    {% endblock %}
+            </nav>
+        </div>
+        <main class="container">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+    <div class="background-color1"></div>
+    <div class="background-color2"></div>
 </body>
 </html>

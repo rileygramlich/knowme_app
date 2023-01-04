@@ -190,9 +190,6 @@
     background-image: linear-gradient(to right, hsla(181, 100%, 87%, 0.827), hsla(181, 100%, 74%, 0.982),hsla(181, 100%, 50%, 0.885));
 }
 
-
-
-
 .container {
     display: flex;
     justify-content: center;

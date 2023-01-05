@@ -17,6 +17,7 @@ for (let i=0; i<true_answers.length; i++) {
         answersEl[i].appendChild(choice)
     })
 };
+
 let radioButtons = document.querySelectorAll('input[name="text"]');
 console.log(radioButtons)
 
@@ -37,6 +38,16 @@ btn.addEventListener('click', () => {
     score = userAnswers.filter(answer => answer == true).length
     let resultEl = document.getElementById("results")
     let result = document.createElement("span")
-    result.innerHTML = `You got ${score} out of ${userAnswers.length} correct!`
+    let percentage = Math.floor(score / userAnswers.length * 100)
+    if (percentage >= 80) {
+        result.innerHTML = `You got ${percentage}% correct - You know me so well!`
+    } else if (percentage >= 60) {
+        result.innerHTML = `You got ${percentage}% correct - We need to hangout a bit more!`
+    } else if (percentage >= 40) {
+        result.innerHTML = `You got ${percentage}% correct - Oh boy... We really need to talk more...`
+    } else if (percentage >= 20) {
+        result.innerHTML = `You got ${percentage}% correct - That's a little sad...`
+    } else if (percentage >= 0)
+    result.innerHTML = `You got ${percentage}% correct - Dang... Friendship Cancelled...`
     resultEl.appendChild(result)
 });

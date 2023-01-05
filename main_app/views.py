@@ -88,7 +88,7 @@ class QuestionCreate(LoginRequiredMixin, CreateView):
 def question_new(request):
   form = request.POST
   print(form['question'])
-  QUESTIONS.append([(len(QUESTIONS) + 1), form['question']])
+  QUESTIONS.append([str(len(QUESTIONS) + 1), form['question']])
   print(QUESTIONS)
   return redirect('question_create')
 

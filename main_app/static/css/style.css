@@ -53,7 +53,7 @@
     display: flex;
     justify-content: center;
     position: relative;
-    bottom: 0;
+    bottom: auto;
     width: 75%;
     font-size: 15px;
     gap: 10px;

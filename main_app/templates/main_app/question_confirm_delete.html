@@ -3,11 +3,11 @@
 {% block content %}
   <h1>Delete Question</h1>
 
-  <h4>Are you sure you want to delete {{ question.name }}?</h4>
+  <h4>Are you sure you want to delete "{{ question.get_question_display }}"</h4>
 
   <form action="" method="POST">
     {% csrf_token %}
-    <input type="submit" value="Yes - Delete!" class="btn">
+    <input type="submit" value="Yes - Delete!" class="button">
     <!-- <a href="{% url 'detail' question.id %}">Cancel</a> -->
   </form>
 {% endblock %}

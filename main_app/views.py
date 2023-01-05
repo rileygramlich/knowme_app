@@ -90,6 +90,7 @@ def question_new(request):
   print(form['question'])
   QUESTIONS.append([str(len(QUESTIONS) + 1), form['question']])
   print(QUESTIONS)
+  print(Question.objects.all())
   return redirect('question_create')
 
 class QuestionUpdate(LoginRequiredMixin, UpdateView):

@@ -2,8 +2,12 @@
 {% block content %}
 
 <div>
-  <div class="about-title">
-    <h1>Create Quiz</h1>
+  <div class="about">
+    {% if object %}
+    <h1>Edit <span class="teal-text">{{object.name}}</span></h1>
+  {% else %}
+  <h1>Create Quiz</h1>
+  {% endif %}
   </div>
   <div class="form">
       <form action="" method="post">

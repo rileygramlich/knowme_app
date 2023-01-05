@@ -6,8 +6,9 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
 
-from .models import QUESTIONS, Quiz, Question
+from .models import Quiz, Question
 
 questions = Question.objects.all()
 
@@ -51,6 +52,9 @@ def quizzes_detail(request, quiz_id):
   'questions': questions,
   'questions_quiz_doesnt_have': questions_quiz_doesnt_have
   })
+
+# def quiz_create(request):
+#   return render(request, '/')
     
 class QuizCreate(CreateView):
   model = Quiz
@@ -79,19 +83,12 @@ def quiz_take_quiz(request, quiz_id):
 class QuestionCreate(LoginRequiredMixin, CreateView):
   model = Question
   fields = ['question', 'true_answer', 'false_answer1', 'false_answer2', 'false_answer3']
-  success_url = '/quizzes/'
+  success_url = '/'
 
   def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
-def question_new(request):
-  form = request.POST
-  print(form['question'])
-  QUESTIONS.append([str(len(QUESTIONS) + 1), form['question']])
-  print(QUESTIONS)
-  print(Question.objects.all())
-  return redirect('question_create')
 
 class QuestionUpdate(LoginRequiredMixin, UpdateView):
   model = Question

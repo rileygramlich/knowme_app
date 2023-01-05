@@ -9,8 +9,8 @@
     background-image: linear-gradient(to right, hsla(181, 100%, 50%, 0.827), hsla(181, 100%, 74%, 0.982),hsla(181, 100%, 86%, 0.971));
     border-radius: 20px;
     border:  thick dotted rgb(36, 189, 181);
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 1%;
+    margin-right: 1%;
     font-family: fantasy;
     box-shadow: 0 25px 50px -12px rgb(138, 237, 255);
 }
@@ -53,7 +53,7 @@
     display: flex;
     justify-content: center;
     position: relative;
-    bottom: 0;
+    bottom: auto;
     width: 75%;
     font-size: 15px;
     gap: 10px;
@@ -254,6 +254,12 @@ ol > li::before {
     to {
         transform: translateX(0%);
     }
+}
+
+.navbar-anim {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
 }
 
 .navbar-anim > .navbar{

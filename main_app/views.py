@@ -93,6 +93,7 @@ class QuestionCreate(LoginRequiredMixin, CreateView):
 class QuestionUpdate(LoginRequiredMixin, UpdateView):
   model = Question
   fields = ['true_answer', 'false_answer1', 'false_answer2', 'false_answer3']
+  success_url = '/quizzes/'
 
 class QuestionDelete(DeleteView):
   model = Question

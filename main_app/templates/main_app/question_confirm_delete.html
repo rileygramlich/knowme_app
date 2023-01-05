@@ -1,13 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Delete Question</h1>
+<div class="about">
+  <div class="about-title">
+    <h1>Delete Question</h1>
+  </div>
 
   <h4>Are you sure you want to delete "{{ question.get_question_display }}"</h4>
+  <div class="about-title">
+    <form action="" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="Yes - Delete!" class="button">
+      <!-- <a href="{% url 'detail' question.id %}">Cancel</a> -->
+    </form>
+  </div>
+</div>
 
-  <form action="" method="POST">
-    {% csrf_token %}
-    <input type="submit" value="Yes - Delete!" class="button">
-    <!-- <a href="{% url 'detail' question.id %}">Cancel</a> -->
-  </form>
 {% endblock %}

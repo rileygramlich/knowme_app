@@ -1,7 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
+
 <div class="about">
-  <div>
+  <div class="about-title">
     <h1>{{ quiz.name }}</h1>
   </div>
 <div class="row">
@@ -20,8 +21,8 @@
               <p>False: {{ question.false_answer2 }}</p>
               <p>False: {{ question.false_answer3 }}</p>
             </div>
-            <a class="button" href="{% url 'question_update' question.id %}">Edit Question Answers</a>
-            <a class="button" href="{% url 'question_delete' question.id %}">Delete Question</a>
+            <a class="button" href="{% url 'question_update' question.id %}">Edit</a>
+            <a class="button" href="{% url 'question_delete' question.id %}">Delete</a>
         </span>
       </div>
       <div class="card-action">
@@ -54,8 +55,8 @@
                   <p>False: {{ question.false_answer2 }}</p>
                   <p>False: {{ question.false_answer3 }}</p>
                 </div>
-                <a class="button" href="{% url 'question_update' question.id %}">Edit Question Answers</a>
-                <a class="button" href="{% url 'question_delete' question.id %}">Delete Question</a>
+                <a class="button" href="{% url 'question_update' question.id %}">Edit</a>
+                <a class="button" href="{% url 'question_delete' question.id %}">Delete</a>
             </span>
           </div>
           <div class="card-action">

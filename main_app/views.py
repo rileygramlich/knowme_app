@@ -95,6 +95,7 @@ def question_new(request):
 
 class QuestionUpdate(LoginRequiredMixin, UpdateView):
   model = Question
+  fields = ['true_answer', 'false_answer1', 'false_answer2', 'false_answer3']
 
 class QuestionDelete(DeleteView):
   model = Question

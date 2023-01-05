@@ -1,27 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="about">
-<h1>{{ quiz.name }}</h1>
-</div>
-
 <div>
-  <ol>
-      {% for question in quiz.questions.all %}
-        <li>{{ question.get_question_display }}</li>
-        <input type="hidden" name= "answer" value="{{ question.true_answer }}">
-        <input type="hidden" name= "answer" value="{{ question.false_answer1 }}">
-        <input type="hidden" name= "answer" value="{{ question.false_answer2 }}">
-        <input type="hidden" name= "answer" value="{{ question.false_answer3 }}">
-        <ul>
-          <span></span>
-        </ul>
-      {% endfor %}
-  </ol>
 
+  <div class="about">
+    <h1>{{ quiz.name }}</h1>
+  </div>
+  
+  <div class="form">
+    <ol>
+        {% for question in quiz.questions.all %}
+          <li>{{ question.get_question_display }}</li>
+          <input type="hidden" name= "answer" value="{{ question.true_answer }}">
+          <input type="hidden" name= "answer" value="{{ question.false_answer1 }}">
+          <input type="hidden" name= "answer" value="{{ question.false_answer2 }}">
+          <input type="hidden" name= "answer" value="{{ question.false_answer3 }}">
+          <ul>
+            <span></span>
+          </ul>
+        {% endfor %}
+    </ol>
+  </div>
+  
+  <input type="submit" value="Submit!" class="button">
+  
 </div>
-
-<input type="submit" value="Submit!" id="btn">
 
 
 

@@ -5,23 +5,24 @@
   <div class="about-title">
     <h1>{{ quiz.name }}</h1>
   </div>
-
 <div class="row">
   <div class="">
     <h3>{{ quiz.name }}'s Questions</h3>
+    <ol>
     {% if quiz.questions.count %} {% for question in quiz.questions.all %}
+    <li>
     <div class="card">
       <div class="card-content">
         <span class="card-title">
-          <h4>{{ question.get_question_display }}<h4>
+          <h4> {{ question.get_question_display }}<h4>
             <div class="answers">
-              <p>a.) {{ question.true_answer }}</p>
-              <p>b.) {{ question.false_answer1 }}</p>
-              <p>c.) {{ question.false_answer2 }}</p>
-              <p>d.) {{ question.false_answer3 }}</p>
+              <p>True: {{ question.true_answer }}</p>
+              <p>False: {{ question.false_answer1 }}</p>
+              <p>False: {{ question.false_answer2 }}</p>
+              <p>False: {{ question.false_answer3 }}</p>
             </div>
-            <a class="button" href="{% url 'question_update' question.id %}">Edit Question Answers</a>
-            <a class="button" href="{% url 'question_delete' question.id %}">Delete Question</a>
+            <a class="button" href="{% url 'question_update' question.id %}">Edit</a>
+            <a class="button" href="{% url 'question_delete' question.id %}">Delete</a>
         </span>
       </div>
       <div class="card-action">
@@ -31,27 +32,31 @@
         </form>
       </div>
     </div>
+  </li>
     {% endfor %} {% else %}
     <h5>No questions added to quiz yet</h5>
     {% endif %}
+</ol>
   </div>
   <div class="">
     <h3>Available questions</h3>
     <a class='button' href="{% url 'question_create' %}">Add Another Question</a>
+    <ol>
     {% if questions_quiz_doesnt_have.count %}
       {% for question in questions_quiz_doesnt_have.all %}
+      <li>
         <div class="card">
           <div class="card-content">
             <span class="card-title">
               <h4>{{ question.get_question_display }}<h4>
                 <div class="answers">
-                  <p>a.) {{ question.true_answer }}</p>
-                  <p>b.) {{ question.false_answer1 }}</p>
-                  <p>c.) {{ question.false_answer2 }}</p>
-                  <p>d.) {{ question.false_answer3 }}</p>
+                  <p>True: {{ question.true_answer }}</p>
+                  <p>False: {{ question.false_answer1 }}</p>
+                  <p>False: {{ question.false_answer2 }}</p>
+                  <p>False: {{ question.false_answer3 }}</p>
                 </div>
-                <a class="button" href="{% url 'question_update' question.id %}">Edit Question Answers</a>
-                <a class="button" href="{% url 'question_delete' question.id %}">Delete Question</a>
+                <a class="button" href="{% url 'question_update' question.id %}">Edit</a>
+                <a class="button" href="{% url 'question_delete' question.id %}">Delete</a>
             </span>
           </div>
           <div class="card-action">
@@ -61,9 +66,12 @@
             </form>
           </div>
         </div>
+      </li>
         {% endfor %} {% else %}
       <h5>{{quiz.name}} Already Has All questions Available</h5>
       {% endif %}
+      
+      </ol>
   </div>
 </div>
 

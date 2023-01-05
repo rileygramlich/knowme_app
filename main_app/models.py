@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 
+
 QUESTIONS = [
     ['1', 'What is my favorite color?'], 
     ['2', 'What is my favourite food?'],

@@ -44,9 +44,12 @@ def quizzes_index(request):
 def quizzes_detail(request, quiz_id):
   quiz = Quiz.objects.get(id=quiz_id)
   questions = Question.objects.all()
+  questions_quiz_doesnt_have = Question.objects.exclude(id__in = quiz.questions.all().values_list('id'))
+  print(questions_quiz_doesnt_have.all())
   return render(request, 'quizzes/detail.html', {
   'quiz': quiz,
-  'questions': questions
+  'questions': questions,
+  'questions_quiz_doesnt_have': questions_quiz_doesnt_have
   })
     
 class QuizCreate(CreateView):
@@ -88,3 +91,13 @@ class QuestionUpdate(LoginRequiredMixin, UpdateView):
 class QuestionDelete(DeleteView):
   model = Question
   success_url = '/quizzes/'
+
+def assoc_question(request, quiz_id, question_id):
+  Quiz.objects.get(id=quiz_id).questions.add(question_id)
+  print(question_id)
+  return redirect('detail', quiz_id=quiz_id)
+
+def unassoc_question(request, quiz_id, question_id):
+  Quiz.objects.get(id=quiz_id).questions.remove(question_id)
+  print(question_id)
+  return redirect('detail', quiz_id=quiz_id)

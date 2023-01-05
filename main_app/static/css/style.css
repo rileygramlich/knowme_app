@@ -264,3 +264,12 @@ ol > li::before {
 .form {
     animation: moveleft 2s 1;
 }
+
+
+.card {
+    border: solid 2px;
+}
+
+.row {
+    display: flex;
+}

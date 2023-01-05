@@ -17,6 +17,7 @@ for (let i=0; i<true_answers.length; i++) {
         answersEl[i].appendChild(choice)
     })
 };
+
 let radioButtons = document.querySelectorAll('input[name="text"]');
 console.log(radioButtons)
 
@@ -31,7 +32,6 @@ Array.from(radioButtons).forEach(radioButton => {
         userAnswers[question] = e.target.classList.contains('t')
     })
 });
-
 
 let score = 0
 btn.addEventListener('click', () => {

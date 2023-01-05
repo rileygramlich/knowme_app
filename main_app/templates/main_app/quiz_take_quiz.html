@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="about">
+<div id="quiz" class="about">
 <h1>{{ quiz.name }}</h1>
 </div>
 
@@ -9,20 +9,21 @@
   <ol>
       {% for question in quiz.questions.all %}
         <li>{{ question.get_question_display }}</li>
-        <input type="hidden" name= "answer" value="{{ question.true_answer }}">
-        <input type="hidden" name= "answer" value="{{ question.false_answer1 }}">
-        <input type="hidden" name= "answer" value="{{ question.false_answer2 }}">
-        <input type="hidden" name= "answer" value="{{ question.false_answer3 }}">
-        <ul>
-          <span></span>
-        </ul>
+        <form id="{{ forloop.counter0 }}">
+          <input type="hidden" class="true_answer" name= "answer" value="{{ question.true_answer }}">
+          <input type="hidden" class="false_answer1" name= "answer" value="{{ question.false_answer1 }}">
+          <input type="hidden" class="false_answer2" name= "answer" value="{{ question.false_answer2 }}">
+          <input type="hidden" class="false_answer3" name= "answer" value="{{ question.false_answer3 }}">
+          <ul>
+            <span></span>
+          </ul>
+        </form>
       {% endfor %}
   </ol>
-
 </div>
 
-<input type="submit" value="Submit!" id="btn">
+<button id="btn">Submit!</button>
 
-
+<div id="results"></div>
 
 {% endblock %} 

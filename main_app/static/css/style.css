@@ -53,8 +53,7 @@
 .footer {
     display: flex;
     justify-content: center;
-    position: relative;
-    bottom: auto;
+    align-items: flex-end;
     width: 75%;
     font-size: 15px;
     gap: 10px;
@@ -63,22 +62,21 @@
     background-image: linear-gradient(to right, hsla(181, 100%, 50%, 0.827), hsla(181, 100%, 74%, 0.982),hsla(181, 100%, 86%, 0.971));
     border-radius: 20px;
     border:  thick dotted rgb(36, 189, 181);
-    margin-left: 10%;
+    margin-left: 12%;
     margin-right: 10%;
     margin-top: 5%;
     font-family: fantasy;
     box-shadow: 0 25px 50px -12px rgb(138, 237, 255);
-    justify-content: center;
 
 }
 
-.footer:hover {
+/*.footer:hover {
     border: solid 5px;
     transition: all 1s ease-in-out;
     border-block: thick solid rgb(33, 237, 252);
     border-inline: thick solid rgb(209, 248, 255);
     background-image: linear-gradient(to right, hsla(181, 100%, 87%, 0.827), hsla(181, 100%, 74%, 0.982),hsla(181, 100%, 50%, 0.885));
-}
+}*/
 
 .background-color {
     background-color: antiquewhite;
@@ -200,6 +198,7 @@
 .container {
     display: flex;
     justify-content: center;
+    align-items: stretch;
 }
 
 input {

@@ -37,7 +37,6 @@
     </div>
     <div class="about">
       <h3 class="about-title">Available questions</h3>
-      <a class='button' href="{% url 'question_create' %}">Add Another Question</a>
       {% if questions_quiz_doesnt_have.count %}
         {% for question in questions_quiz_doesnt_have.all %}
           <div class="card">
@@ -66,6 +65,9 @@
           {% endfor %} {% else %}
         <h5>{{quiz.name}} Already Has All questions Available</h5>
         {% endif %}
+        <div class="about">
+          <a class='button' href="{% url 'question_create' %}">Add Another Question</a>
+        </div>
     </div>
   </div>
 </div>

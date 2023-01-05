@@ -1,8 +1,9 @@
 
 .navbar {
     display: flex;
+    flex-grow: 2;
     font-size: 25px;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 30px;
     padding: 20px;
     /*background-color:hsla(181, 100%, 81%, 0.971);*/
@@ -123,7 +124,7 @@
     gap: 10px
 }
 
-.button {
+.button, .button-smaller {
     font-size: larger;
     font-weight: bolder;
     font-family: fantasy;
@@ -263,22 +264,60 @@ ol > li::before {
 }
 
 .navbar-anim > .navbar{
-    animation: movedown 2s 1;
+    animation: movedown 700ms 1;
 }
 
 .footer {
-    animation: moveup 2s 1;
+    animation: moveup 700ms 1;
 }
 
 .form {
-    animation: moveleft 2s 1;
+    animation: moveleft 500ms 1;
 }
 
 
 .card {
-    border: solid 2px;
+    font-size: x-large;
+    font-weight: bolder;
+    font-family: fantasy;
+    background-image: linear-gradient(to right, hsla(181, 100%, 50%, 0.708), hsla(181, 100%, 74%, 0.982),hsla(181, 100%, 86%, 0.971));
+    padding: 20px;
+    border-radius: 10px;
+    border-block: thick solid rgb(217, 137, 231);
+    border-inline: thick solid rgb(208, 117, 218);
+    box-shadow: 0 25px 50px -12px rgb(249, 200, 253);
+    text-decoration: none;
+    text-shadow: 5px 5px 10px rgb(246, 192, 201);
+    text-transform: capitalize;
+    color: rgb(226, 122, 139);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
 }
+
+.detailsbutton {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    flex-direction: row;
+    justify-content: center;
+    font-size: x-large;
+    font-weight: bolder;
+    font-family: fantasy;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: rgb(226, 122, 139);
+    padding-bottom: -20px;
+}
+
+
 
 .row {
     display: flex;
+}
+
+.button-smaller {
+
+    margin-bottom: -40px;
 }

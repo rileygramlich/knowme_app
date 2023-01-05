@@ -45,7 +45,7 @@ def quizzes_detail(request, quiz_id):
   quiz = Quiz.objects.get(id=quiz_id)
   questions = Question.objects.all()
   questions_quiz_doesnt_have = Question.objects.exclude(id__in = quiz.questions.all().values_list('id'))
-  print(questions_quiz_doesnt_have.all())
+  # print(questions_quiz_doesnt_have.all())
   return render(request, 'quizzes/detail.html', {
   'quiz': quiz,
   'questions': questions,

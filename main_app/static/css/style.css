@@ -52,7 +52,7 @@
 .footer {
     display: flex;
     justify-content: center;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 75%;
     font-size: 15px;
@@ -64,9 +64,11 @@
     border:  thick dotted rgb(36, 189, 181);
     margin-left: 10%;
     margin-right: 10%;
+    margin-top: 5%;
     font-family: fantasy;
     box-shadow: 0 25px 50px -12px rgb(138, 237, 255);
     justify-content: center;
+
 }
 
 .footer:hover {
@@ -116,6 +118,9 @@
     text-transform: capitalize;
     cursor: pointer;
     color: rgb(226, 122, 139);
+    display: flex;
+    justify-content: center;
+    gap: 10px
 }
 
 .button {
@@ -123,7 +128,7 @@
     font-weight: bolder;
     font-family: fantasy;
     background-color: hsl(301, 100%, 91%);
-    padding: 10px;
+    padding: 7px;
     border-radius: 10px;
     border-block: thick solid rgb(217, 137, 231);
     border-inline: thick solid rgb(208, 117, 218);
@@ -133,6 +138,7 @@
     text-transform: capitalize;
     cursor: pointer;
     color: rgb(226, 122, 139);
+    margin: 3px;
 }
 
 .button:hover {
@@ -189,9 +195,6 @@
     border-inline: thick solid rgb(209, 248, 255);
     background-image: linear-gradient(to right, hsla(181, 100%, 87%, 0.827), hsla(181, 100%, 74%, 0.982),hsla(181, 100%, 50%, 0.885));
 }
-
-
-
 
 .container {
     display: flex;

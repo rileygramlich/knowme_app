@@ -1,32 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="about">
+<div id="quiz" class="about">
+<h1>{{ quiz.name }}</h1>
+</div>
 
-  <div class="about-title">
-    <h1>{{ quiz.name }}</h1>
-  </div>
-  
-  <div class="form">
-    <ol>
-        {% for question in quiz.questions.all %}
-          <li>{{ question.get_question_display }}</li>
-          <input type="hidden" name= "answer" value="{{ question.true_answer }}">
-          <input type="hidden" name= "answer" value="{{ question.false_answer1 }}">
-          <input type="hidden" name= "answer" value="{{ question.false_answer2 }}">
-          <input type="hidden" name= "answer" value="{{ question.false_answer3 }}">
+<div>
+  <ol>
+      {% for question in quiz.questions.all %}
+        <li>{{ question.get_question_display }}</li>
+        <form id="{{ forloop.counter0 }}">
+          <input type="hidden" class="true_answer" name= "answer" value="{{ question.true_answer }}">
+          <input type="hidden" class="false_answer1" name= "answer" value="{{ question.false_answer1 }}">
+          <input type="hidden" class="false_answer2" name= "answer" value="{{ question.false_answer2 }}">
+          <input type="hidden" class="false_answer3" name= "answer" value="{{ question.false_answer3 }}">
           <ul>
             <span></span>
           </ul>
-        {% endfor %}
-    </ol>
-  </div>
-  <div class="about-title">
-    <input type="submit" value="Submit!" class="button-smaller">
-  </div>
-  
+        </form>
+      {% endfor %}
+  </ol>
 </div>
 
+<button id="btn">Submit!</button>
 
+
+<div id="results"></div>
 
 {% endblock %} 

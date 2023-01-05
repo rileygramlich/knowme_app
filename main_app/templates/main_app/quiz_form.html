@@ -3,7 +3,11 @@
 
 <div>
   <div class="about">
-    <h1>Create Quiz</h1>
+    {% if object %}
+    <h1>Edit <span class="teal-text">{{object.name}}</span></h1>
+  {% else %}
+  <h1>Create Quiz</h1>
+  {% endif %}
   </div>
   <div class="form">
       <form action="" method="post">

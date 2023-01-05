@@ -63,7 +63,7 @@ class QuizCreate(CreateView):
 
 class QuizUpdate(UpdateView):
   model = Quiz
-  fields = '__all__'
+  fields = ['name']
 
 class QuizDelete(DeleteView):
   model = Quiz

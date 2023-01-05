@@ -42,6 +42,7 @@ def quizzes_index(request):
     'quiz': Quiz
   })
 
+@login_required
 def quizzes_detail(request, quiz_id):
   quiz = Quiz.objects.get(id=quiz_id)
   questions = Question.objects.all()
@@ -56,7 +57,7 @@ def quizzes_detail(request, quiz_id):
 # def quiz_create(request):
 #   return render(request, '/')
     
-class QuizCreate(CreateView):
+class QuizCreate(LoginRequiredMixin, CreateView):
   model = Quiz
   fields = ['name']
   success_url = '/quizzes/'
@@ -65,11 +66,11 @@ class QuizCreate(CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
-class QuizUpdate(UpdateView):
+class QuizUpdate(LoginRequiredMixin, UpdateView):
   model = Quiz
   fields = ['name']
 
-class QuizDelete(DeleteView):
+class QuizDelete(LoginRequiredMixin, DeleteView):
   model = Quiz
   success_url = '/quizzes/'
 
@@ -83,7 +84,7 @@ def quiz_take_quiz(request, quiz_id):
 class QuestionCreate(LoginRequiredMixin, CreateView):
   model = Question
   fields = ['question', 'true_answer', 'false_answer1', 'false_answer2', 'false_answer3']
-  success_url = '/'
+  success_url = '/quizzes/'
 
   def form_valid(self, form):
         form.instance.user = self.request.user
@@ -95,15 +96,17 @@ class QuestionUpdate(LoginRequiredMixin, UpdateView):
   fields = ['true_answer', 'false_answer1', 'false_answer2', 'false_answer3']
   success_url = '/quizzes/'
 
-class QuestionDelete(DeleteView):
+class QuestionDelete(LoginRequiredMixin, DeleteView):
   model = Question
   success_url = '/quizzes/'
 
+@login_required
 def assoc_question(request, quiz_id, question_id):
   Quiz.objects.get(id=quiz_id).questions.add(question_id)
   print(question_id)
   return redirect('detail', quiz_id=quiz_id)
 
+@login_required
 def unassoc_question(request, quiz_id, question_id):
   Quiz.objects.get(id=quiz_id).questions.remove(question_id)
   print(question_id)

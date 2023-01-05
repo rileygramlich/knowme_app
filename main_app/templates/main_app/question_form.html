@@ -20,7 +20,9 @@
 
   <div>
     <h2>Question Suggestions: </h2>
-    {%  %}
+    {% for question in questions %}
+    <p>{{ question.question }}</p>
+    {% endfor %}
   </div>
 </div>
   

@@ -63,7 +63,7 @@ class QuizCreate(CreateView):
 
 class QuizUpdate(UpdateView):
   model = Quiz
-  fields = '__all__'
+  fields = ['name']
 
 class QuizDelete(DeleteView):
   model = Quiz
@@ -85,8 +85,17 @@ class QuestionCreate(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
+def question_new(request):
+  form = request.POST
+  print(form['question'])
+  QUESTIONS.append([str(len(QUESTIONS) + 1), form['question']])
+  print(QUESTIONS)
+  print(Question.objects.all())
+  return redirect('question_create')
+
 class QuestionUpdate(LoginRequiredMixin, UpdateView):
   model = Question
+  fields = ['true_answer', 'false_answer1', 'false_answer2', 'false_answer3']
 
 class QuestionDelete(DeleteView):
   model = Question

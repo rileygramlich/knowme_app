@@ -1,23 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
-
-
-<h1>{{ quiz.name }}</h1>
-
-<div>
-  <ol>
-      {% for question in quiz.question_set.all %}
-        <li>{{ question.get_question_display }}</li>
-        <input type="radio" name="answers">
-        <input type="hidden" class= "true_answer" value="{{ question.true_answer }}">
-        <input type="hidden" class= "false_answer1" value="{{ question.false_answer1 }}">
-        <input type="hidden" class= "false_answer2" value="{{ question.false_answer2 }}">
-        <input type="hidden" class= "false_answer3" value="{{ question.false_answer3 }}">
-        <ul>
-        </ul>
-      {% endfor %}
-  </ol>
+<div class="about">
+  <div>
+    <h1>{{ quiz.name }}</h1>
+  </div>
+  
+  <div>
+    <ol>
+        {% for question in quiz.question_set.all %}
+          <li>{{ question.get_question_display }}</li>
+          <input type="radio" name="answers">
+          <input type="hidden" class= "true_answer" value="{{ question.true_answer }}">
+          <input type="hidden" class= "false_answer1" value="{{ question.false_answer1 }}">
+          <input type="hidden" class= "false_answer2" value="{{ question.false_answer2 }}">
+          <input type="hidden" class= "false_answer3" value="{{ question.false_answer3 }}">
+          <ul>
+          </ul>
+        {% endfor %}
+    </ol>
+  </div>
 </div>
+
 
 
 {% endblock %} 

@@ -1,34 +1,69 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <div class="about">
   <div>
     <h1>{{ quiz.name }}</h1>
   </div>
 
-
-<div>
-  <ol>
-      {% for question in questions %}
-        <li>{{ question.get_question_display }}</li>
-        <ul>
-          <li>{{ question.true_answer }}</li>
-          <li>{{ question.false_answer1 }}</li>
-          <li>{{ question.false_answer2 }}</li>
-          <li>{{ question.false_answer3 }}</li>
-        </ul>
-        <a href="{% url 'question_update' question.id %}">Edit</a>
-      {% endfor %}
-  </ol>
-  <div class="form">
-    {% for question in quiz.question_set.all %}
-      <ol>
-          <li>{{ question.get_question_display }}</li>
-          <a class="button"href="{% url 'question_update' question.id %}">Edit</a>
-      </ol>
-    {% endfor %}
+<div class="row">
+  <div class="">
+    <h3>{{ quiz.name }}'s Questions</h3>
+    {% if quiz.questions.count %} {% for question in quiz.questions.all %}
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">
+          <h4>{{ question.get_question_display }}<h4>
+            <div class="answers">
+              <p>a.) {{ question.true_answer }}</p>
+              <p>b.) {{ question.false_answer1 }}</p>
+              <p>c.) {{ question.false_answer2 }}</p>
+              <p>d.) {{ question.false_answer3 }}</p>
+            </div>
+            <a class="button" href="{% url 'question_update' question.id %}">Edit Question Answers</a>
+            <a class="button" href="{% url 'question_delete' question.id %}">Delete Question</a>
+        </span>
+      </div>
+      <div class="card-action">
+        <form action="{% url 'unassoc_question' quiz.id question.id %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="button">Remove From Quiz</button>
+        </form>
+      </div>
+    </div>
+    {% endfor %} {% else %}
+    <h5>No questions added to quiz yet</h5>
+    {% endif %}
+  </div>
+  <div class="">
+    <h3>Available questions</h3>
+    <a class='button' href="{% url 'question_create' %}">Add Another Question</a>
+    {% if questions_quiz_doesnt_have.count %}
+      {% for question in questions_quiz_doesnt_have.all %}
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+              <h4>{{ question.get_question_display }}<h4>
+                <div class="answers">
+                  <p>a.) {{ question.true_answer }}</p>
+                  <p>b.) {{ question.false_answer1 }}</p>
+                  <p>c.) {{ question.false_answer2 }}</p>
+                  <p>d.) {{ question.false_answer3 }}</p>
+                </div>
+                <a class="button" href="{% url 'question_update' question.id %}">Edit Question Answers</a>
+                <a class="button" href="{% url 'question_delete' question.id %}">Delete Question</a>
+            </span>
+          </div>
+          <div class="card-action">
+            <form action="{% url 'assoc_question' quiz.id question.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="button">Add to Quiz</button>
+            </form>
+          </div>
+        </div>
+        {% endfor %} {% else %}
+      <h5>{{quiz.name}} Already Has All questions Available</h5>
+      {% endif %}
   </div>
 </div>
 
-
-{% endblock %} 
+{% endblock %}

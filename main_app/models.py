@@ -4,13 +4,13 @@ from django.contrib.auth.models import User
 
 
 
-QUESTIONS = [
-    ['1', 'What is my favorite color?'], 
-    ['2', 'What is my favourite food?'],
-    ['3', 'What is my favourite animal?'], 
-    ['4', 'What is my favourite movie?'], 
-    ['5', 'Who is my favourite music artist?'], 
-]
+# QUESTIONS = [
+#     ['1', 'What is my favorite color?'], 
+#     ['2', 'What is my favourite food?'],
+#     ['3', 'What is my favourite animal?'], 
+#     ['4', 'What is my favourite movie?'], 
+#     ['5', 'Who is my favourite music artist?'], 
+# ]
 
 # Create your models here.
 class Question(models.Model):

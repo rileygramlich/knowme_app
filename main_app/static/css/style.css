@@ -1,8 +1,9 @@
 
 .navbar {
     display: flex;
+    flex-grow: 2;
     font-size: 25px;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 30px;
     padding: 20px;
     /*background-color:hsla(181, 100%, 81%, 0.971);*/
@@ -317,6 +318,6 @@ ol > li::before {
 }
 
 .button-smaller {
-    
+
     margin-bottom: -40px;
 }

@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div>
+<div class="about">
 
-  <div class="about">
+  <div class="about-title">
     <h1>{{ quiz.name }}</h1>
   </div>
   
@@ -21,8 +21,9 @@
         {% endfor %}
     </ol>
   </div>
-  
-  <input type="submit" value="Submit!" class="button">
+  <div class="about-title">
+    <input type="submit" value="Submit!" class="button-smaller">
+  </div>
   
 </div>
 

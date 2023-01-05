@@ -9,6 +9,12 @@
     <h1>Create Question</h1>
     {% endif %}
   </div>
+  
+  <form action="{% url 'question_new' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="question">
+    <input type="submit" value="Add Question">
+  </form>
 
   <form action="" method="post" class="form">
     {% csrf_token %}

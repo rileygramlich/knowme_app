@@ -14,10 +14,10 @@
         <span class="card-title">
           <h4>{{ question.get_question_display }}<h4>
             <div class="answers">
-              <p>a.) {{ question.true_answer }}</p>
-              <p>b.) {{ question.false_answer1 }}</p>
-              <p>c.) {{ question.false_answer2 }}</p>
-              <p>d.) {{ question.false_answer3 }}</p>
+              <p>True: {{ question.true_answer }}</p>
+              <p>False: {{ question.false_answer1 }}</p>
+              <p>False: {{ question.false_answer2 }}</p>
+              <p>False: {{ question.false_answer3 }}</p>
             </div>
             <a class="button" href="{% url 'question_update' question.id %}">Edit Question Answers</a>
             <a class="button" href="{% url 'question_delete' question.id %}">Delete Question</a>
@@ -44,10 +44,10 @@
             <span class="card-title">
               <h4>{{ question.get_question_display }}<h4>
                 <div class="answers">
-                  <p>a.) {{ question.true_answer }}</p>
-                  <p>b.) {{ question.false_answer1 }}</p>
-                  <p>c.) {{ question.false_answer2 }}</p>
-                  <p>d.) {{ question.false_answer3 }}</p>
+                  <p>True: {{ question.true_answer }}</p>
+                  <p>False: {{ question.false_answer1 }}</p>
+                  <p>False: {{ question.false_answer2 }}</p>
+                  <p>False: {{ question.false_answer3 }}</p>
                 </div>
                 <a class="button" href="{% url 'question_update' question.id %}">Edit Question Answers</a>
                 <a class="button" href="{% url 'question_delete' question.id %}">Delete Question</a>

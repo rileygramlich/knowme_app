@@ -85,6 +85,13 @@ class QuestionCreate(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
+def question_new(request):
+  form = request.POST
+  print(form['question'])
+  QUESTIONS.append([(len(QUESTIONS) + 1), form['question']])
+  print(QUESTIONS)
+  return redirect('question_create')
+
 class QuestionUpdate(LoginRequiredMixin, UpdateView):
   model = Question
 

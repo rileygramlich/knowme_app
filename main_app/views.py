@@ -36,8 +36,9 @@ def about(request):
 
 # QUIZ PATHS
 def quizzes_index(request):
+  user_quizzes = Quiz.objects.filter(user=request.user)
   return render(request, 'quizzes/index.html', {
-    'quizzes': Quiz.objects.all(),
+    'quizzes': user_quizzes,
     'questions': questions,
     'quiz': Quiz
   })

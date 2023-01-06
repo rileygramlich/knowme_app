@@ -82,9 +82,11 @@ WSGI_APPLICATION = 'knowme_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'knowme_app',
-        'USER': 'postgres',
-        'PASSWORD': env('PSQL_PASSWORD')
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT')
     }
 }
 

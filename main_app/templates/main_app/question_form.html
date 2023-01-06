@@ -1,5 +1,4 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <div>
   <div class="about">
@@ -15,12 +14,19 @@
     <table>
       {{ form.as_table }}
     </table>
-    <input type="submit" value="Submit!" class="button">
+    <input type="submit" value="Submit!" class="button" />
   </form>
 
   <div>
-    <h2>Question Suggestions: </h2>
+    <h2>Question Suggestions:</h2>
+    <ol>
+      <li>What is my favorite color?</li>
+      <li>What is my favourite food?</li>
+      <li>What is my favourite animal?</li>
+      <li>What is my favourite movie?</li>
+      <li>Who is my favourite music artist?</li>
+    </ol>
   </div>
 </div>
-  
+
 {% endblock %}

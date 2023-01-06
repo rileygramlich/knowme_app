@@ -300,7 +300,13 @@ ol > li::before {
 }
 
 .results {
-    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    gap: 20px;
 }
 
 .detailsbutton {
@@ -318,8 +324,6 @@ ol > li::before {
     padding-bottom: -20px;
 }
 
-
-
 .row {
     display: flex;
 }
@@ -327,4 +331,8 @@ ol > li::before {
 .button-smaller {
 
     margin-bottom: -40px;
+}
+
+#hideli{
+    list-style: none;
 }

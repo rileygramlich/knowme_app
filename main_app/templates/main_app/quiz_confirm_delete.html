@@ -6,12 +6,12 @@
     <h1>Delete Quiz</h1>
   </div>
 
-  <h4>Are you sure you want to delete {{ quiz.name }}?</h4>
+  <h4>Are you sure you want to delete <strong>{{ quiz.name }}?</strong></h4>
 
   <form action="" method="POST" class="form">
     {% csrf_token %}
     <input type="submit" value="Yes - Delete!" class="button">
-    <a class="button"href="{% url 'detail' quiz.id %}">Cancel</a>
+    <a class="button" href="javascript:history.back()">Cancel</a>
   </form>
 </div>
 {% endblock %}

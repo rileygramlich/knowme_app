@@ -5,9 +5,10 @@
     <div class="about-title">
         <h1>Know Me?</h1>
     </div>
+    
     <div>
         <div class="about-content">
-            <a href="{% url 'quiz_take_quiz' 1 %}">Take a Quiz</a>
+            <a href="{% url 'index' %}">Take a Quiz</a>
         </div>
         {% if user.is_authenticated %}
         <div class="about-content">

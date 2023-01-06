@@ -3,10 +3,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.views.generic import ListView, DetailView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpResponseRedirect
 
 from .models import Quiz, Question
 
@@ -37,7 +35,7 @@ def about(request):
 # QUIZ PATHS
 def quizzes_index(request):
   return render(request, 'quizzes/index.html', {
-    'quizzes': Quiz.objects.all(),
+    'quizzes': Quiz.objects.filter(user=request.user),
     'questions': questions,
     'quiz': Quiz
   })
@@ -47,15 +45,11 @@ def quizzes_detail(request, quiz_id):
   quiz = Quiz.objects.get(id=quiz_id)
   questions = Question.objects.all()
   questions_quiz_doesnt_have = Question.objects.exclude(id__in = quiz.questions.all().values_list('id'))
-  print(questions_quiz_doesnt_have.all())
   return render(request, 'quizzes/detail.html', {
   'quiz': quiz,
   'questions': questions,
   'questions_quiz_doesnt_have': questions_quiz_doesnt_have
   })
-
-# def quiz_create(request):
-#   return render(request, '/')
     
 class QuizCreate(LoginRequiredMixin, CreateView):
   model = Quiz
@@ -69,6 +63,7 @@ class QuizCreate(LoginRequiredMixin, CreateView):
 class QuizUpdate(LoginRequiredMixin, UpdateView):
   model = Quiz
   fields = ['name']
+  success_url = '/quizzes/'
 
 class QuizDelete(LoginRequiredMixin, DeleteView):
   model = Quiz
@@ -90,7 +85,6 @@ class QuestionCreate(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
-
 class QuestionUpdate(LoginRequiredMixin, UpdateView):
   model = Question
   fields = ['true_answer', 'false_answer1', 'false_answer2', 'false_answer3']
@@ -103,11 +97,9 @@ class QuestionDelete(LoginRequiredMixin, DeleteView):
 @login_required
 def assoc_question(request, quiz_id, question_id):
   Quiz.objects.get(id=quiz_id).questions.add(question_id)
-  print(question_id)
   return redirect('detail', quiz_id=quiz_id)
 
 @login_required
 def unassoc_question(request, quiz_id, question_id):
   Quiz.objects.get(id=quiz_id).questions.remove(question_id)
-  print(question_id)
   return redirect('detail', quiz_id=quiz_id)

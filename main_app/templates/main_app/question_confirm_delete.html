@@ -6,13 +6,13 @@
     <h1>Delete Question</h1>
   </div>
 
-  <h4>Are you sure you want to delete "{{ question.get_question_display }}"</h4>
+  <h4>Are you sure you want to delete <strong>"{{ question.question }}"</strong></h4>
   <div class="about-title">
     <form action="" method="POST">
       {% csrf_token %}
       <input type="submit" value="Yes - Delete!" class="button">
-      <!-- <a href="{% url 'detail' question.id %}">Cancel</a> -->
     </form>
+    <a class="button" href="javascript:history.back()">Cancel</a>
   </div>
 </div>
 

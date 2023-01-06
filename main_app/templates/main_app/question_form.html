@@ -9,7 +9,7 @@
     {% endif %}
   </div>
 
-  <form action="" method="post" class="form">
+  <form action="" method="post" class="form" autocomplete="off">
     {% csrf_token %}
     <table>
       {{ form.as_table }}

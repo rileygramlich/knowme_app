@@ -10,9 +10,13 @@
           {% for question in quiz.question_set.all %} 
             <p>Number of Questions: {{ quiz.question_set.all|length }}</p>
           {% endfor %}
-        <a class="button"href="{% url 'quiz_update' quiz.id %}">Edit</a>
-        <a class="button"href="{% url 'quiz_delete' quiz.id %}">Delete</a>
-        <a class="button"href="{% url 'quiz_take_quiz' quiz.id %}">Take this Quiz!</a>
+        <div>
+          {% if user.is_authenticated %}
+          <a class="button"href="{% url 'quiz_update' quiz.id %}">Edit</a>
+          <a class="button"href="{% url 'quiz_delete' quiz.id %}">Delete</a>
+          {% endif %}
+          <a class="button"href="{% url 'quiz_take_quiz' quiz.id %}">Take this Quiz!</a>
+        </div>
       </div>
     {% endfor %}
   </div>

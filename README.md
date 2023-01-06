@@ -6,17 +6,22 @@ Have you ever been curious to see how well people know you? Well let's find out!
 The site can be accessed [here](x).  
 
 ## Screenshots  
-Home Page:  
-![Home page](x)  
-Sign Up Page:  
-![Sign Up Page](x)  
+Home Page (Not Logged In):  
+![Home page (Not Logged In)](homepagenotloggedin.jpeg)  
+Home Page (Logged In):  
+![Home page (Logged In)](homepageloggedin.jpeg)  
+Log In Page:  
+![Log In Page](x)  
 All Quizzes Page:  
-![All Quizzes Page](y)
+![All Quizzes Page](allquizzes.jpeg)
 Specific Quiz Page:
-![Specific Quiz Page](z)
-Make a Quiz Page:
-![Make a Quiz Page](z)
-
+![Specific Quiz Page](specificquiz.jpeg)
+Create Quiz Page:
+![Create Quiz Page](createquiz.jpeg)
+Create Question Page:
+![Create Question Page](createquestion.jpeg)
+Take a Test Page:
+![Take a Test Page](takeatest.jpeg)
 
 ## Technologies Used  
 - Git
@@ -56,6 +61,7 @@ Organized the Trello planning and Google Doc. Assisted with front-end functional
 - See the answers and scores of quizzes people have taken.
 - See all scores per quiz and rank by highest to lowest.
 - See quizzes that the user has taken.
+- Add different types of questions (i.e. True/False, Fill in the Blank, 2 Truths and a Lie)
 
 *Test-Takers:*
 - Be able to use the same quiz but change the answers for the original test-maker to take.

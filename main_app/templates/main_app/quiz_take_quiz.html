@@ -9,7 +9,7 @@
   <div class="form">
     <ol>
         {% for question in quiz.questions.all %}
-          <li>{{ question.get_question_display }}</li>
+          <li>{{ question.question }}</li>
           <form id="{{ forloop.counter0 }}">
             <input type="hidden" class="true_answer" name= "answer" value="{{ question.true_answer }}">
             <input type="hidden" class="false_answer1" name= "answer" value="{{ question.false_answer1 }}">

@@ -121,8 +121,11 @@
     color: rgb(226, 122, 139);
     display: flex;
     justify-content: center;
-    gap: 10px
+    gap: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 
 .button, .button-smaller {
     font-size: larger;
@@ -264,15 +267,15 @@ ol > li::before {
 }
 
 .navbar-anim > .navbar{
-    animation: movedown 700ms 1;
+    animation: movedown 500ms 1;
 }
 
 .footer {
     animation: moveup 700ms 1;
 }
 
-.form {
-    animation: moveleft 500ms 1;
+.form, .card {
+    animation: moveleft 300ms 1;
 }
 
 
@@ -294,6 +297,10 @@ ol > li::before {
     justify-content: center;
     gap: 10px;
     margin-bottom: 10px;
+}
+
+.results {
+    font-weight: bolder;
 }
 
 .detailsbutton {

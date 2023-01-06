@@ -34,7 +34,10 @@ def about(request):
 
 # QUIZ PATHS
 def quizzes_index(request):
-  user_quizzes = Quiz.objects.filter(user=request.user)
+  if request.user.is_authenticated:
+    user_quizzes = Quiz.objects.filter(user=request.user)
+  else:
+    user_quizzes = Quiz.objects.all()
   return render(request, 'quizzes/index.html', {
     'quizzes': user_quizzes,
     'questions': questions,

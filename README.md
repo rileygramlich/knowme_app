@@ -29,19 +29,17 @@ Take a Test Page:
 - HTML
 - CSS
 - JS
+- bit.io
 
 ## Planning Sites
 Figma for Design Template:
-[Figma](https://www.figma.com/file/dYeKGRGG7MtakWAymLafEa/Project-3-GA-knowme?node-id=0%3A1&t=MGiaO9aGCigz0DBn-1)
-
-Google Doc for Organization:
-[Google Doc](https://docs.google.com/document/d/1ZKIrL7_7BnaMPc0V7jeXQT0wU9mXj5T9_VeI5Gpg6_o/edit?usp=sharing)
+[Figma](./screenshots/figma.png)
 
 Lucid Chart for ERD:
-![Lucid Chart](./screenshots/Screenshot_20230106_083852.png)
+![Lucid Chart](./screenshots/erd.jpeg)
 
 Trello for Task Planning:
-[Trello](https://trello.com/invite/b/AxeYNFev/ATTI688278d5db9789e9a50fe2a55833cf14A536C921/knowmeapp)
+[Trello](./screenshots/trello.png)
 
 ## Roles
 - [Henry Ma](https://github.com/hernnyma) - Main Designer/Front-End Developer:

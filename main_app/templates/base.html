@@ -11,8 +11,7 @@
     <title>Know Me</title>
 </head>
 <style>
-    
-    svg {
+    .star > svg {
         display: flex;
         justify-content: center;
         flex-shrink: 2;
@@ -23,8 +22,46 @@
         animation: spin 2s linear forwards infinite;
     }
 
-    svg:hover {
-        animation: spin 2s linear forwards infinite;
+    .shooting-star > svg {
+        animation: downleft 5s linear forwards infinite;
+    }
+
+    .shooting-star2 > svg {
+        animation: downleft 6s ease-in forwards infinite;
+    }
+
+    .shooting-star3 > svg {
+        animation: downleft 6s ease-in forwards infinite;
+    }
+
+    .shooting-star4 > svg {
+        animation: shortdownleft 6s ease-in-out forwards infinite;
+    }
+
+    @keyframes downleft {
+        0% {
+            opacity: 0.1;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(-200%) translateY(150%);
+            opacity: 0;
+        }
+    }
+
+    @keyframes shortdownleft {
+        0% {
+            opacity: 0.1;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(-150%) translateY(120%);
+            opacity: 0;
+        }
     }
 
     @keyframes spin {
@@ -45,12 +82,59 @@
         }
 
     }
-    
 </style>
+<div class="shooting-star">
+    <svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 120 120" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs/>
+        <g id="Layer-1" vectornator:layerName="Layer 1">
+        <path d="M60.9125 79.5981L58.6275 78.6891L56.5825 80.0581L56.5825 80.0581L56.7425 77.6061L54.8105 76.0781L54.8105 76.0781L57.1965 75.4711L58.0405 73.1681L58.0405 73.1681L59.3575 75.2441L61.8105 75.3351L61.8105 75.3351L60.2485 77.2311" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="#f099ff" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="0.648438" stroke-width="1.5"/>
+        <path d="M69.0175 65.8431C68.6265 65.4521 67.9945 65.4521 67.6035 65.8431L60.5395 72.9071L60.6235 73.0391L63.1425 73.1331L69.0185 67.2571" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="none"/>
+        <path d="M73.3105 50.5501L75.3105 48.5501M65.3105 58.5501L70.3105 53.5501M56.3105 45.5501L57.3105 44.5501M64.3105 46.5501L66.3105 44.5501M56.3105 54.5501L61.3105 49.5501M71.3105 63.5501L73.3105 61.5501M74.3105 75.5501L78.3105 71.5501" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="#eb67ff" stroke-linecap="round" stroke-linejoin="miter" stroke-opacity="0.528184" stroke-width="2"/>
+        <path d="M47.6565 83.4671L44.7185 82.2981L42.0885 84.0581L42.2945 80.9051L39.8105 78.9411L42.8785 78.1611L43.9635 75.2001L45.6565 77.8691L48.8105 77.9851L46.8015 80.4241L47.6565 83.4671ZM45.9125 61.4721L43.6275 60.5631L41.5825 61.9321L41.7425 59.4791L39.8105 57.9511L42.1965 57.3451L43.0405 55.0421L44.3575 57.1181L46.8105 57.2081L45.2485 59.1051L45.9125 61.4721Z" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="#f196ff" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="0.528184" stroke-width="1.5"/>
+        <path d="M63.0175 60.8431C62.6265 60.4521 61.9945 60.4521 61.6035 60.8431L46.8675 75.5791L46.9215 75.6641L49.5135 75.7601L63.0165 62.2571C63.4085 61.8661 63.4085 61.2341 63.0175 60.8431ZM54.0175 47.8431C53.6265 47.4521 52.9945 47.4521 52.6035 47.8431L45.5885 54.8581L45.6235 54.9131L48.2655 55.0101L54.0185 49.2571C54.4085 48.8661 54.4085 48.2341 54.0175 47.8431ZM79.3105 43.5501C78.7582 43.5501 78.3105 43.9978 78.3105 44.5501C78.3105 45.1024 78.7582 45.5501 79.3105 45.5501C79.8628 45.5501 80.3105 45.1024 80.3105 44.5501C80.3105 43.9978 79.8628 43.5501 79.3105 43.5501ZM69.3105 40.5501C68.7582 40.5501 68.3105 40.9978 68.3105 41.5501C68.3105 42.1024 68.7582 42.5501 69.3105 42.5501C69.8628 42.5501 70.3105 42.1024 70.3105 41.5501C70.3105 40.9978 69.8628 40.5501 69.3105 40.5501ZM60.3105 40.5501C59.7582 40.5501 59.3105 40.9978 59.3105 41.5501C59.3105 42.1024 59.7582 42.5501 60.3105 42.5501C60.8628 42.5501 61.3105 42.1024 61.3105 41.5501C61.3105 40.9978 60.8628 40.5501 60.3105 40.5501ZM77.3105 56.5501C76.7582 56.5501 76.3105 56.9978 76.3105 57.5501C76.3105 58.1024 76.7582 58.5501 77.3105 58.5501C77.8628 58.5501 78.3105 58.1024 78.3105 57.5501C78.3105 56.9978 77.8628 56.5501 77.3105 56.5501ZM81.3105 67.5501C80.7582 67.5501 80.3105 67.9978 80.3105 68.5501C80.3105 69.1024 80.7582 69.5501 81.3105 69.5501C81.8628 69.5501 82.3105 69.1024 82.3105 68.5501C82.3105 67.9978 81.8628 67.5501 81.3105 67.5501Z" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="none"/>
+        </g>
+    </svg>
+</div>
+<div class="shooting-star2">
+    <svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 120 120" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs/>
+        <g id="Layer-1" vectornator:layerName="Layer 1">
+        <path d="M60.9125 79.5981L58.6275 78.6891L56.5825 80.0581L56.5825 80.0581L56.7425 77.6061L54.8105 76.0781L54.8105 76.0781L57.1965 75.4711L58.0405 73.1681L58.0405 73.1681L59.3575 75.2441L61.8105 75.3351L61.8105 75.3351L60.2485 77.2311" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="#f099ff" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="0.648438" stroke-width="1.5"/>
+        <path d="M69.0175 65.8431C68.6265 65.4521 67.9945 65.4521 67.6035 65.8431L60.5395 72.9071L60.6235 73.0391L63.1425 73.1331L69.0185 67.2571" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="none"/>
+        <path d="M73.3105 50.5501L75.3105 48.5501M65.3105 58.5501L70.3105 53.5501M56.3105 45.5501L57.3105 44.5501M64.3105 46.5501L66.3105 44.5501M56.3105 54.5501L61.3105 49.5501M71.3105 63.5501L73.3105 61.5501M74.3105 75.5501L78.3105 71.5501" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="#eb67ff" stroke-linecap="round" stroke-linejoin="miter" stroke-opacity="0.528184" stroke-width="2"/>
+        <path d="M47.6565 83.4671L44.7185 82.2981L42.0885 84.0581L42.2945 80.9051L39.8105 78.9411L42.8785 78.1611L43.9635 75.2001L45.6565 77.8691L48.8105 77.9851L46.8015 80.4241L47.6565 83.4671ZM45.9125 61.4721L43.6275 60.5631L41.5825 61.9321L41.7425 59.4791L39.8105 57.9511L42.1965 57.3451L43.0405 55.0421L44.3575 57.1181L46.8105 57.2081L45.2485 59.1051L45.9125 61.4721Z" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="#f196ff" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="0.528184" stroke-width="1.5"/>
+        <path d="M63.0175 60.8431C62.6265 60.4521 61.9945 60.4521 61.6035 60.8431L46.8675 75.5791L46.9215 75.6641L49.5135 75.7601L63.0165 62.2571C63.4085 61.8661 63.4085 61.2341 63.0175 60.8431ZM54.0175 47.8431C53.6265 47.4521 52.9945 47.4521 52.6035 47.8431L45.5885 54.8581L45.6235 54.9131L48.2655 55.0101L54.0185 49.2571C54.4085 48.8661 54.4085 48.2341 54.0175 47.8431ZM79.3105 43.5501C78.7582 43.5501 78.3105 43.9978 78.3105 44.5501C78.3105 45.1024 78.7582 45.5501 79.3105 45.5501C79.8628 45.5501 80.3105 45.1024 80.3105 44.5501C80.3105 43.9978 79.8628 43.5501 79.3105 43.5501ZM69.3105 40.5501C68.7582 40.5501 68.3105 40.9978 68.3105 41.5501C68.3105 42.1024 68.7582 42.5501 69.3105 42.5501C69.8628 42.5501 70.3105 42.1024 70.3105 41.5501C70.3105 40.9978 69.8628 40.5501 69.3105 40.5501ZM60.3105 40.5501C59.7582 40.5501 59.3105 40.9978 59.3105 41.5501C59.3105 42.1024 59.7582 42.5501 60.3105 42.5501C60.8628 42.5501 61.3105 42.1024 61.3105 41.5501C61.3105 40.9978 60.8628 40.5501 60.3105 40.5501ZM77.3105 56.5501C76.7582 56.5501 76.3105 56.9978 76.3105 57.5501C76.3105 58.1024 76.7582 58.5501 77.3105 58.5501C77.8628 58.5501 78.3105 58.1024 78.3105 57.5501C78.3105 56.9978 77.8628 56.5501 77.3105 56.5501ZM81.3105 67.5501C80.7582 67.5501 80.3105 67.9978 80.3105 68.5501C80.3105 69.1024 80.7582 69.5501 81.3105 69.5501C81.8628 69.5501 82.3105 69.1024 82.3105 68.5501C82.3105 67.9978 81.8628 67.5501 81.3105 67.5501Z" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="none"/>
+        </g>
+    </svg>
+</div>
+<div class="shooting-star3">
+    <svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 120 120" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs/>
+        <g id="Layer-1" vectornator:layerName="Layer 1">
+        <path d="M60.9125 79.5981L58.6275 78.6891L56.5825 80.0581L56.5825 80.0581L56.7425 77.6061L54.8105 76.0781L54.8105 76.0781L57.1965 75.4711L58.0405 73.1681L58.0405 73.1681L59.3575 75.2441L61.8105 75.3351L61.8105 75.3351L60.2485 77.2311" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="#f099ff" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="0.648438" stroke-width="1.5"/>
+        <path d="M69.0175 65.8431C68.6265 65.4521 67.9945 65.4521 67.6035 65.8431L60.5395 72.9071L60.6235 73.0391L63.1425 73.1331L69.0185 67.2571" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="none"/>
+        <path d="M73.3105 50.5501L75.3105 48.5501M65.3105 58.5501L70.3105 53.5501M56.3105 45.5501L57.3105 44.5501M64.3105 46.5501L66.3105 44.5501M56.3105 54.5501L61.3105 49.5501M71.3105 63.5501L73.3105 61.5501M74.3105 75.5501L78.3105 71.5501" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="#eb67ff" stroke-linecap="round" stroke-linejoin="miter" stroke-opacity="0.528184" stroke-width="2"/>
+        <path d="M47.6565 83.4671L44.7185 82.2981L42.0885 84.0581L42.2945 80.9051L39.8105 78.9411L42.8785 78.1611L43.9635 75.2001L45.6565 77.8691L48.8105 77.9851L46.8015 80.4241L47.6565 83.4671ZM45.9125 61.4721L43.6275 60.5631L41.5825 61.9321L41.7425 59.4791L39.8105 57.9511L42.1965 57.3451L43.0405 55.0421L44.3575 57.1181L46.8105 57.2081L45.2485 59.1051L45.9125 61.4721Z" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="#f196ff" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="0.528184" stroke-width="1.5"/>
+        <path d="M63.0175 60.8431C62.6265 60.4521 61.9945 60.4521 61.6035 60.8431L46.8675 75.5791L46.9215 75.6641L49.5135 75.7601L63.0165 62.2571C63.4085 61.8661 63.4085 61.2341 63.0175 60.8431ZM54.0175 47.8431C53.6265 47.4521 52.9945 47.4521 52.6035 47.8431L45.5885 54.8581L45.6235 54.9131L48.2655 55.0101L54.0185 49.2571C54.4085 48.8661 54.4085 48.2341 54.0175 47.8431ZM79.3105 43.5501C78.7582 43.5501 78.3105 43.9978 78.3105 44.5501C78.3105 45.1024 78.7582 45.5501 79.3105 45.5501C79.8628 45.5501 80.3105 45.1024 80.3105 44.5501C80.3105 43.9978 79.8628 43.5501 79.3105 43.5501ZM69.3105 40.5501C68.7582 40.5501 68.3105 40.9978 68.3105 41.5501C68.3105 42.1024 68.7582 42.5501 69.3105 42.5501C69.8628 42.5501 70.3105 42.1024 70.3105 41.5501C70.3105 40.9978 69.8628 40.5501 69.3105 40.5501ZM60.3105 40.5501C59.7582 40.5501 59.3105 40.9978 59.3105 41.5501C59.3105 42.1024 59.7582 42.5501 60.3105 42.5501C60.8628 42.5501 61.3105 42.1024 61.3105 41.5501C61.3105 40.9978 60.8628 40.5501 60.3105 40.5501ZM77.3105 56.5501C76.7582 56.5501 76.3105 56.9978 76.3105 57.5501C76.3105 58.1024 76.7582 58.5501 77.3105 58.5501C77.8628 58.5501 78.3105 58.1024 78.3105 57.5501C78.3105 56.9978 77.8628 56.5501 77.3105 56.5501ZM81.3105 67.5501C80.7582 67.5501 80.3105 67.9978 80.3105 68.5501C80.3105 69.1024 80.7582 69.5501 81.3105 69.5501C81.8628 69.5501 82.3105 69.1024 82.3105 68.5501C82.3105 67.9978 81.8628 67.5501 81.3105 67.5501Z" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="none"/>
+        </g>
+    </svg>
+</div>
+<div class="shooting-star4">
+    <svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 120 120" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs/>
+        <g id="Layer-1" vectornator:layerName="Layer 1">
+        <path d="M60.9125 79.5981L58.6275 78.6891L56.5825 80.0581L56.5825 80.0581L56.7425 77.6061L54.8105 76.0781L54.8105 76.0781L57.1965 75.4711L58.0405 73.1681L58.0405 73.1681L59.3575 75.2441L61.8105 75.3351L61.8105 75.3351L60.2485 77.2311" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="#f099ff" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="0.648438" stroke-width="1.5"/>
+        <path d="M69.0175 65.8431C68.6265 65.4521 67.9945 65.4521 67.6035 65.8431L60.5395 72.9071L60.6235 73.0391L63.1425 73.1331L69.0185 67.2571" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="none"/>
+        <path d="M73.3105 50.5501L75.3105 48.5501M65.3105 58.5501L70.3105 53.5501M56.3105 45.5501L57.3105 44.5501M64.3105 46.5501L66.3105 44.5501M56.3105 54.5501L61.3105 49.5501M71.3105 63.5501L73.3105 61.5501M74.3105 75.5501L78.3105 71.5501" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="#eb67ff" stroke-linecap="round" stroke-linejoin="miter" stroke-opacity="0.528184" stroke-width="2"/>
+        <path d="M47.6565 83.4671L44.7185 82.2981L42.0885 84.0581L42.2945 80.9051L39.8105 78.9411L42.8785 78.1611L43.9635 75.2001L45.6565 77.8691L48.8105 77.9851L46.8015 80.4241L47.6565 83.4671ZM45.9125 61.4721L43.6275 60.5631L41.5825 61.9321L41.7425 59.4791L39.8105 57.9511L42.1965 57.3451L43.0405 55.0421L44.3575 57.1181L46.8105 57.2081L45.2485 59.1051L45.9125 61.4721Z" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="#f196ff" stroke-linecap="butt" stroke-linejoin="miter" stroke-opacity="0.528184" stroke-width="1.5"/>
+        <path d="M63.0175 60.8431C62.6265 60.4521 61.9945 60.4521 61.6035 60.8431L46.8675 75.5791L46.9215 75.6641L49.5135 75.7601L63.0165 62.2571C63.4085 61.8661 63.4085 61.2341 63.0175 60.8431ZM54.0175 47.8431C53.6265 47.4521 52.9945 47.4521 52.6035 47.8431L45.5885 54.8581L45.6235 54.9131L48.2655 55.0101L54.0185 49.2571C54.4085 48.8661 54.4085 48.2341 54.0175 47.8431ZM79.3105 43.5501C78.7582 43.5501 78.3105 43.9978 78.3105 44.5501C78.3105 45.1024 78.7582 45.5501 79.3105 45.5501C79.8628 45.5501 80.3105 45.1024 80.3105 44.5501C80.3105 43.9978 79.8628 43.5501 79.3105 43.5501ZM69.3105 40.5501C68.7582 40.5501 68.3105 40.9978 68.3105 41.5501C68.3105 42.1024 68.7582 42.5501 69.3105 42.5501C69.8628 42.5501 70.3105 42.1024 70.3105 41.5501C70.3105 40.9978 69.8628 40.5501 69.3105 40.5501ZM60.3105 40.5501C59.7582 40.5501 59.3105 40.9978 59.3105 41.5501C59.3105 42.1024 59.7582 42.5501 60.3105 42.5501C60.8628 42.5501 61.3105 42.1024 61.3105 41.5501C61.3105 40.9978 60.8628 40.5501 60.3105 40.5501ZM77.3105 56.5501C76.7582 56.5501 76.3105 56.9978 76.3105 57.5501C76.3105 58.1024 76.7582 58.5501 77.3105 58.5501C77.8628 58.5501 78.3105 58.1024 78.3105 57.5501C78.3105 56.9978 77.8628 56.5501 77.3105 56.5501ZM81.3105 67.5501C80.7582 67.5501 80.3105 67.9978 80.3105 68.5501C80.3105 69.1024 80.7582 69.5501 81.3105 69.5501C81.8628 69.5501 82.3105 69.1024 82.3105 68.5501C82.3105 67.9978 81.8628 67.5501 81.3105 67.5501Z" fill="#e357ec" fill-opacity="0.59983" fill-rule="nonzero" opacity="1" stroke="none"/>
+        </g>
+    </svg>
+</div>
 <body class="background-color">
     <div class="about">
         <div class="navbar-anim">
-            <div>
+            <div class="star">
                 <svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 120 120" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <defs/>
                     <g id="star" vectornator:layerName="Layer 1">
@@ -73,7 +157,7 @@
                     <a href="{% url 'login' %}">Login</a>
                 {% endif %}
             </nav>
-            <div>
+            <div class="star">
                 <svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 120 120" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <defs/>
                     <g id="star" vectornator:layerName="Layer 1">

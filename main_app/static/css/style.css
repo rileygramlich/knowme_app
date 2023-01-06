@@ -77,9 +77,35 @@
 }
 
 .background-color {
+    position: relative;
     background-color: antiquewhite;
     background-image: linear-gradient(90deg, hsl(300, 60%, 96%),hsl(283, 89%, 93%), hsla(186, 89%, 86%, 0.982),hsl(300, 100%, 92%),hsl(300, 70%, 95%));
     background-size: round;
+    z-index: -2;
+}
+
+.shooting-star {
+    position: absolute;
+    z-index: -1;
+    transform: translateX(450%) translateY(-20%);
+}
+
+.shooting-star2 {
+    position: absolute;
+    z-index: -1;
+    transform: translateX(300%) translateY(-20%);
+}
+
+.shooting-star3 {
+    position: absolute;
+    z-index: -1;
+    transform: translateX(125%) translateY(-20%);
+}
+
+.shooting-star4 {
+    position: absolute;
+    z-index: -1;
+    transform: translateX(470%) translateY(90%);
 }
 
 .login{
@@ -273,7 +299,13 @@ input {
 }
 
 .results {
-    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    gap: 20px;
 }
 
 .detailsbutton {
@@ -298,6 +330,10 @@ input {
 .button-smaller {
 
     margin-bottom: -40px;
+}
+
+#hideli{
+    list-style: none;
 }
 
 .about-content > a {

@@ -6,19 +6,23 @@
     <h1>{{ quiz.name }}</h1>
   </div>
 
-  <div class="form">
-    <ol>
+  <div class="">
+    <ol class="about">
         {% for question in quiz.questions.all %}
-          <li>{{ question.question }}</li>
-          <form id="{{ forloop.counter0 }}">
-            <input type="hidden" class="true_answer" name= "answer" value="{{ question.true_answer }}">
-            <input type="hidden" class="false_answer1" name= "answer" value="{{ question.false_answer1 }}">
-            <input type="hidden" class="false_answer2" name= "answer" value="{{ question.false_answer2 }}">
-            <input type="hidden" class="false_answer3" name= "answer" value="{{ question.false_answer3 }}">
-            <ul>
-              <span></span>
-            </ul>
-          </form>
+        <div class="form">
+          <div class="results">
+            <li>{{ question.question }}</li>
+            <form id="{{ forloop.counter0 }}">
+              <input type="hidden" class="true_answer" id="hideli" name= "answer" value="{{ question.true_answer }}">
+              <input type="hidden" class="false_answer1" name= "answer" value="{{ question.false_answer1 }}">
+              <input type="hidden" class="false_answer2" name= "answer" value="{{ question.false_answer2 }}">
+              <input type="hidden" class="false_answer3" name= "answer" value="{{ question.false_answer3 }}">
+              <ul>
+                <span></span>
+              </ul>
+            </form>
+          </div>
+        </div>
         {% endfor %}
     </ol>
   </div>
